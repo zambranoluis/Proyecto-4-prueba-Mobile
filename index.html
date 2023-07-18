@@ -32,7 +32,7 @@
     }
 </style>
 <body id="cuerpo" class="flex flex-col bg-[red] w-scren overflow-x-hidden">
-    <nav class="flex flex-col bg-[#Efba34] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
+    <nav class="flex flex-col min-[300px]:bg-[#Efba34] min-[400px]:bg-[gray] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
         <section class="flex  h-[60px] justify-between">
             <div class="flex justify-evenly items-center w-[80%]">
                 <a href=""><img class=" h-[55px]" src="./imagenes/logo.png" alt="logoMnk"></a>
@@ -74,44 +74,27 @@
                 <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">Hogar Muebles y Cocina</h1>
                 <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
             </div>
-            <div class="flex relative">        <!-- h-280 -->
+            <div class="flex relative">
                 <div class="flex absolute z-10 justify-between items-center w-full px-[0.2%] ">
-                    <span class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_back</span>
-                    <span class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_forward</span>
+                    <span onclick="cambiarProductosIzquierda1()" id="botonProductosIzquierda" class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_back</span>
+                    <span onclick="cambiarProductosDerecha1()" id="botonProductosDerecha" class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_forward</span>
                 </div>
-                <div class="grid grid-cols-2 place-items-center absolute z-0 h-[280px] w-full bg-[green] gap-[3%] px-[10%]">
-                    <div class="flex flex-col displayProductoCuadrado flex px-[5px] py-[5px] justify-between h-[95%] w-[100%] bg-[gray]">
-                        <h1 class="font-bold text-[1.3rem]">Titulo Producto Titulo Producto</h1>
-                        <img class="" src="./imagenes/Cocina1.png" alt="producto cuadrado">
+                <div id="gridProductos" class="grid place-items-center absolute z-0 h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
+                    <!-- <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[5px] justify-between h-[95%] w-[100%] bg-[gray]">
+                        <h1 class="tituloProducto font-bold text-[1.3rem]">Titulo Producto Titulo Producto</h1>
+                        <img class="imagenProducto" src="./imagenes/cocina1.png" alt="producto cuadrado">
                         <div id="precio_y_cantidad" class="">
-                            <h3>Precio: </h3>
-                            <h3>Cantidad disponible: </h3>
+                            <h3 class="precioProducto">Precio: </h3>
+                            <h3 class="cantidadDisponibleProducto">Cantidad disponible: </h3>
                         </div>
                         <div class="flex justify-between">
                             <button class="bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Ver descripción</button>
                             <button class="flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Añadir al carrito <span class="material-symbols-outlined flex text-[0.75rem]">add_circle</span></button>
                         </div>
-                    </div>
-                    <div class="displayProductoCuadrado flex h-[90%] w-[100%] bg-[gray]">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
-
-
-        <!-- <div id="categoriaAlimentos" class="hidden">
-            <div id="fondoHogar" class="flex justify-center items-center w-full h-[360px] bg-[url('./imagenes/fondoAlimentos.jpg')] gap-[5px]">
-                <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
-                <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">Alimentos Bebidas y Dulces</h1>
-                <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
-            </div>
-            <div class="bg-[green]">
-                <span class="material-symbols-outlined">arrow_back</span>
-                <div class="h-[280px] bg-[skyblue]">
-                </div>
-                <span class="material-symbols-outlined">arrow_forward</span>
-            </div>
-        </div> -->
     </main>
     <footer></footer>
 </body>

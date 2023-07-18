@@ -31,7 +31,7 @@
         font-family: 'Chelsea Market', cursive;
     }
 </style>
-<body id="cuerpo" class="flex flex-col bg-[red] w-scren  overflow-x-hidden">
+<body id="cuerpo" class="flex flex-col bg-[red] w-scren overflow-x-hidden">
     <nav class="flex flex-col bg-[#Efba34] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
         <section class="flex  h-[60px] justify-between">
             <div class="flex justify-evenly items-center w-[80%]">
@@ -71,7 +71,7 @@
         <div id="categoriaHogar">
             <div id="fondoHogar" class="flex justify-center items-center w-full h-[360px] bg-[url('./imagenes/fondoSalaCocina.jpg')] gap-[5px]">
                 <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
-                <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">Hogar Muebles y Cocina</h1>
+                <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">Hogar Muebles y Cocina</h1>
                 <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
             </div>
             <div class="flex relative">        <!-- h-280 -->
@@ -79,8 +79,21 @@
                     <span class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_back</span>
                     <span class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_forward</span>
                 </div>
-                <div class="flex absolute z-0 h-[280px] w-full bg-[green]">
-                    carrusel productos
+                <div class="grid grid-cols-2 place-items-center absolute z-0 h-[280px] w-full bg-[green] gap-[3%] px-[10%]">
+                    <div class="flex flex-col displayProductoCuadrado flex px-[5px] py-[5px] justify-between h-[95%] w-[100%] bg-[gray]">
+                        <h1 class="font-bold text-[1.3rem]">Titulo Producto Titulo Producto</h1>
+                        <img class="" src="./imagenes/Cocina1.png" alt="producto cuadrado">
+                        <div id="precio_y_cantidad" class="">
+                            <h3>Precio: </h3>
+                            <h3>Cantidad disponible: </h3>
+                        </div>
+                        <div class="flex justify-between">
+                            <button class="bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Ver descripción</button>
+                            <button class="flex bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Añadir al Carrito <span class="material-symbols-outlined flex text-[0.75rem] justify-center items-center">add_circle</span></button>
+                        </div>
+                    </div>
+                    <div class="displayProductoCuadrado flex h-[90%] w-[100%] bg-[gray]">
+                    </div>
                 </div>
             </div>
         </div>

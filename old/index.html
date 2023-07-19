@@ -31,7 +31,7 @@
         font-family: 'Chelsea Market', cursive;
     }
 </style>
-<body id="cuerpo" class="flex flex-col bg-[red] w-scren h-screen overflow-x-hidden">
+<body id="cuerpo" class="flex flex-col bg-[red] w-scren overflow-x-hidden">
     <nav class="flex flex-col min-[300px]:bg-[#Efba34] min-[400px]:bg-[gray] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
         <section class="flex  h-[60px] justify-between">
             <div class="flex justify-evenly items-center w-[80%]">
@@ -68,12 +68,36 @@
 
 
     <main>
-        <div id="categoria">
-            
+        <div id="categoriaHogar">
+            <div id="fondoHogar" class="flex justify-center items-center w-full h-[360px] bg-[url('./imagenes/fondoSalaCocina.jpg')] gap-[5px]">
+                <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
+                <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">Hogar Muebles y Cocina</h1>
+                <span class="material-symbols-outlined select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
+            </div>
+            <div class="flex relative">
+                <div class="flex absolute z-10 justify-between items-center w-full px-[0.2%] ">
+                    <span onclick="cambiarProductosIzquierda1()" id="botonProductosIzquierda" class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_back</span>
+                    <span onclick="cambiarProductosDerecha1()" id="botonProductosDerecha" class="material-symbols-outlined border h-[280px] flex items-center select-none text-white">arrow_forward</span>
+                </div>
+                <div id="gridProductos" class="grid place-items-center absolute z-0 h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
+                    <!-- <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[5px] justify-between h-[95%] w-[100%] bg-[gray]">
+                        <h1 class="tituloProducto font-bold text-[1.3rem]">Titulo Producto Titulo Producto</h1>
+                        <img class="imagenProducto" src="./imagenes/cocina1.png" alt="producto cuadrado">
+                        <div id="precio_y_cantidad" class="">
+                            <h3 class="precioProducto">Precio: </h3>
+                            <h3 class="cantidadDisponibleProducto">Cantidad disponible: </h3>
+                        </div>
+                        <div class="flex justify-between">
+                            <button class="bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Ver descripción</button>
+                            <button class="flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.75rem]">Añadir al carrito <span class="material-symbols-outlined flex text-[0.75rem]">add_circle</span></button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
         </div>
     </main>
     <footer></footer>
 </body>
 <!-- Importacion de Javascript -->
-<script src="./indexMergeHogarAlimentos.js"></script>
+<script src="./index.js"></script>
 </html>

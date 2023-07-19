@@ -49,10 +49,26 @@
             <a href=""><h3 class="px-[5px] text-[1.1rem]">Contacto</h3></a>
         </section>
         <section class="flex h-[130px] justify-center items-center gap-[5%] ">
-            <a class="flex flex-col gap-[0px] justify-center items-center" href=""><img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar"><span class="font-bold text-[1.5rem]">Hogar</span></a>
-            <a class="flex flex-col gap-[0px] justify-center items-center" href=""><img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces"><span class="font-bold text-[1.5rem]">Alimtenos</span></a>
-            <a class="flex flex-col gap-[0px] justify-center items-center" href=""><img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia"><span class="font-bold text-[1.5rem]">Tecnología</span></a>
-            <a class="flex flex-col gap-[0px] justify-center items-center" href=""><img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa"><span class="font-bold text-[1.5rem]">Ropa</span></a>
+                <div class="flex flex-col items-center" onclick="indiceCategoria=0;indiceDisplay1 = 0;
+                indiceDisplay2 = 1;principal()" >
+                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar">
+                    <span class="font-bold text-[1.5rem]">Hogar</span>
+                </div>
+                <div class="flex flex-col items-center" onclick="indiceCategoria=1;indiceDisplay1 = 0;
+                indiceDisplay2 = 1;principal()" >
+                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces">
+                    <span class="font-bold text-[1.5rem]">Alimentos</span>
+                </div>
+                <div class="flex flex-col items-center" onclick="indiceCategoria=2;indiceDisplay1 = 0;
+                indiceDisplay2 = 1;principal()" >
+                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia">
+                    <span class="font-bold text-[1.5rem]">Tecnología</span>
+                </div>
+                <div class="flex flex-col items-center" onclick="indiceCategoria=3;indiceDisplay1 = 0;
+                indiceDisplay2 = 1;principal()">
+                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa">
+                    <span class="font-bold text-[1.5rem]">Ropa</span>
+                </div>
         </section>
         <section class="flex h-[30px] bg-[white] justify-center items-center px-[5px] gap-[20px]">
             <div class="flex flex-col md:flex-row md:gap-[5px]">

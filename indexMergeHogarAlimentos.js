@@ -354,8 +354,8 @@ function principal (){
                     <div id="gridProductos" class="grid grid-cols-2 place-items-center absolute z-0 h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
                                     
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[20%]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
-                            <img class="imagenProducto h-[55%]" src="${categorias[indiceCategoria].productos[indiceDisplay1].imagen}" alt="producto cuadrado">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
                                 <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}</h3>
                                 <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
@@ -366,8 +366,8 @@ function principal (){
                             </div>
                         </div>
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[20%]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
-                            <img class="imagenProducto h-[55%]" src="${categorias[indiceCategoria].productos[indiceDisplay2].imagen}" alt="producto cuadrado">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
                                 <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}</h3>
                                 <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>

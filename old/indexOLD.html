@@ -39,31 +39,32 @@
                 <a href=""><h1 id="tituloBannerNav" class=" select-none text-[black] text-center text-[2rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
             </div>
             <div class="flex w-[20%] justify-end pr-[0px] items-center gap-[15px]">
-                <span class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer">shopping_cart</span>
-                <span class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer">account_circle</span>
+                <a href=""><span class="material-symbols-outlined text-[3.5rem]">shopping_cart</span></a>
+                <a href=""><span class="material-symbols-outlined text-[3.5rem]">account_circle</span></a>
             </div>
         </section>
         <section class="flex h-[25px] bg-[skyblue] justify-center items-center">
+            <a href=""><h3 class="px-[5px] text-[1.1rem]">Inicio</h3></a>
             <a href=""><h3 class="px-[5px] text-[1.1rem]">Acerca de Nosotros</h3></a>
             <a href=""><h3 class="px-[5px] text-[1.1rem]">Contacto</h3></a>
         </section>
         <section class="flex h-[130px] justify-center items-center gap-[5%] ">
-                <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=0;indiceDisplay1 = 0;
+                <div class="flex flex-col items-center" onclick="indiceCategoria=0;indiceDisplay1 = 0;
                 indiceDisplay2 = 1;principal()" >
                     <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar">
                     <span class="font-bold text-[1.5rem]">Hogar</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=1;indiceDisplay1 = 0;
+                <div class="flex flex-col items-center" onclick="indiceCategoria=1;indiceDisplay1 = 0;
                 indiceDisplay2 = 1;principal()" >
                     <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces">
                     <span class="font-bold text-[1.5rem]">Alimentos</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=2;indiceDisplay1 = 0;
+                <div class="flex flex-col items-center" onclick="indiceCategoria=2;indiceDisplay1 = 0;
                 indiceDisplay2 = 1;principal()" >
                     <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia">
                     <span class="font-bold text-[1.5rem]">Tecnología</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=3;indiceDisplay1 = 0;
+                <div class="flex flex-col items-center" onclick="indiceCategoria=3;indiceDisplay1 = 0;
                 indiceDisplay2 = 1;principal()">
                     <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa">
                     <span class="font-bold text-[1.5rem]">Ropa</span>
@@ -71,8 +72,8 @@
         </section>
         <section class="flex h-[30px] bg-[white] justify-center items-center px-[5px] gap-[20px]">
             <div class="flex flex-col md:flex-row md:gap-[5px]">
-                <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Consulta nuestros horarios para el Servicio a Domicilio,</p>
-                <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Planifica tu entrega para el momento mas conveniente!</p>
+                <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem]">Consulta nuestros horarios para el Servicio a Domicilio,</p>
+                <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem]">Planifica tu entrega para el momento mas conveniente!</p>
             </div>
             <div class="flex gap-[10px] font-bold">
                 <div id="clock" class=""></div>
@@ -81,12 +82,14 @@
         </section>
     </nav>
 
+
     <main>
         <div id="categoria">
+            
         </div>
     </main>
     <footer></footer>
 </body>
 <!-- Importacion de Javascript -->
-<script src="./index.js"></script>
+<script src="./indexMergeHogarAlimentos.js"></script>
 </html>

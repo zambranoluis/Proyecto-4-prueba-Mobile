@@ -32,15 +32,23 @@
     }
 </style>
 <body id="cuerpo" class="flex flex-col bg-[red] w-scren h-screen overflow-x-hidden">
+    <div id="ventanaEmergenteCarrito" class="flex hidden flex-col bg-[orange]/90 absolute top-[255px] p-[10px] w-full h-[340px] overflow-auto">
+            <div class="flex justify-end">
+                <button id="botonCerrarCarrito" class=""><span class="material-symbols-outlined">cancel</span></button>
+            </div>
+            <div id="contenedorDeCarrito" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[5px] h-full items-center">
+            </div>
+    </div>
     <nav class="flex flex-col min-[300px]:bg-[#Efba34] min-[400px]:bg-[gray] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
         <section class="flex  h-[60px] justify-between">
-            <div class="flex justify-evenly items-center w-[80%]">
+            <div class="flex items-center w-[80%] justify-evenly ">
                 <a href=""><img class=" h-[55px]" src="./imagenes/logo.png" alt="logoMnk"></a>
-                <a href=""><h1 id="tituloBannerNav" class=" select-none text-[black] text-center text-[2rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
+                <a href=""><h1 id="tituloBannerNav" class=" select-none text-[black] text-center text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
             </div>
-            <div class="flex w-[20%] justify-end pr-[0px] items-center gap-[15px]">
-                <span class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer">shopping_cart</span>
-                <span class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer">account_circle</span>
+            <div class="flex w-[20%] justify-end mr-[5px] min-[400px]:mr-[15px] md:mr-[30px] items-center gap-[5px] sm:gap-[10px]">
+                <span id="botonAbrirCarrito" class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer flex flex-col justify-center items-center"><span id="contadorDeCarrito" class="flex relative font-bold text-[1.5rem]">0</span>shopping_cart</span>
+                <img src="./imagenes/avatar.jpg" class="h-[45px] rounded-[50%] p-[1px] drop-shadow-lg" alt="avatarUsuario">
+                <!-- <span class="material-symbols-outlined text-[4.5rem] select-none hover:cursor-pointer flex items-center justify-center">account_circle</span> -->
             </div>
         </section>
         <section class="flex h-[25px] bg-[skyblue] justify-center items-center">
@@ -74,7 +82,7 @@
                 <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Consulta nuestros horarios para el Servicio a Domicilio,</p>
                 <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Planifica tu entrega para el momento mas conveniente!</p>
             </div>
-            <div class="flex gap-[10px] font-bold">
+            <div class="flex gap-[10px] font-bold select-none">
                 <div id="clock" class=""></div>
                 <div id="calendar"></div>
             </div>

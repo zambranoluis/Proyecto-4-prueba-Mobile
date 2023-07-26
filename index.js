@@ -584,7 +584,7 @@ function añadirAlCarritoDisplay1(){
             parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
 
 
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[90%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
             contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
             parrafoNombreDeProducto.classList.add("text-[1rem]");
             imagenDeProducto.classList.add("h-[80%]");
@@ -652,7 +652,7 @@ function añadirAlCarritoDisplay2(){
             parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
 
 
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[90%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
             contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
             parrafoNombreDeProducto.classList.add("text-[1rem]");
             imagenDeProducto.classList.add("h-[80%]");
@@ -718,7 +718,7 @@ function añadirAlCarritoDisplay3(){
             parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
 
 
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[90%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
             contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
             parrafoNombreDeProducto.classList.add("text-[1rem]");
             imagenDeProducto.classList.add("h-[80%]");
@@ -785,7 +785,7 @@ function añadirAlCarritoDisplay4(){
             parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
 
 
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[90%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
             contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
             parrafoNombreDeProducto.classList.add("text-[1rem]");
             imagenDeProducto.classList.add("h-[80%]");

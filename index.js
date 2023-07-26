@@ -916,7 +916,7 @@ function principal (){
                     <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
                 </div>
                 <div class="flex ">
-                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none p-[10px] text-[#8e8e8e]">arrow_back</span>
+                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none text-[orange]">arrow_back</span>
                     <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full bg-[#121212] gap-[3%] px-[10%]">
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
                             <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
@@ -967,7 +967,7 @@ function principal (){
                             </div>
                         </div>
                     </div>
-                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none p-[10px] text-[#8e8e8e]">arrow_forward</span>
+                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none text-[orange]">arrow_forward</span>
                 </div>
             </div>
         `;

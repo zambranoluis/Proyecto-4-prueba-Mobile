@@ -27,16 +27,77 @@
         font-size: 10px;
     }
 
+    html{
+        scrollbar-width: none;
+    }
+
+    #ventanaEmergenteCarrito{
+        scrollbar-color:  transparent transparent;
+    }
+
+    /* nav{
+    
+    } */
+
     #tituloBannerNav{
         font-family: 'Chelsea Market', cursive;
     }
 </style>
-<body id="cuerpo" class="flex flex-col bg-[red] w-scren h-screen overflow-x-hidden">
-    <div id="ventanaEmergenteCarrito" class="flex hidden flex-col bg-[orange]/90 absolute top-[255px] p-[10px] w-full h-[340px] overflow-auto">
-            <div class="flex justify-end">
-                <button id="botonCerrarCarrito" class=""><span class="material-symbols-outlined">cancel</span></button>
+<body id="cuerpo" class="flex flex-col bg-[red] overflow-x-hidden">
+    <div id="factura" class="flex hidden flex-col justify-center absolute z-10 left-[5%] top-[200px] m-[10px] min-[400px]:left-[12%] min-[450px]:left-[20%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%]">
+        <div class="h-[420px] w-[300px] sm:w-[500px]  bg-[#f5f5f5] ">
+            <div class=" flex justify-end items-center">
+                <button id="botonCerrarFactura" onclick="cerrarFactura()" class=""><span id="spanCerrarFactura" class="material-symbols-outlined">cancel</span></button>
             </div>
-            <div id="contenedorDeCarrito" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[5px] h-full items-center">
+            <div id="contenidoDeFactura" class="">
+                <div id="facturaCabecera" class="flex flex-col justify-center items-center border-b-[1.5px] border-black mx-[5px]">
+                    <h1 class="text-center text-[1.8rem] font-bold">Factura Fiscal General</h1>
+                    <h2 class="text-center text-[2rem]">JoyGiving Co.🙂</h2>
+                    <h1 class="text-center text-[1.8rem] font-bold">RIF: J-33366688-8</h3>
+                    <h3 class="text-center ">Av. Delicias con Av. 5 de julio, Edificio 345 piso 2 local 3F, Maracaibo, Edo. Zulia, Venezuela.</h3>
+                </div>
+                <div id="facturaDetalles" class="border-b-[1.5px] border-black py-[5px] mx-[5px]">
+                    <div class="flex gap-[10px] font-bold justify-evenly items-center">
+                        <div id="relojFactura" class="text-[1.2rem]">HH:MM:SS</div>
+                        <div id="fechaFactura" class="text-[1.2rem]">DD/MM/AAAA</div>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <h3 class="text-[1.2rem]">Factura Nº: #########</h3>
+                    </div>
+                </div>
+                <div id="facturaProductos" class="flex mx-[5px] items-center mt-[5px] border-b-[1px] border-black">
+                    <div id="facturaProductosDescripcion" class="w-[50%]">
+                        <p class="">Descripción</p>
+                        <div id="productosEnFactura" class=""></div>
+                    </div>    
+                    <div class="w-[20%]">
+                        <p class="text-center" ">Cantidad</p>
+                        <div id="cantidadesEnFactura" class="text-center"></div>
+                    </div>
+                    <div class="w-[20%]">
+                        <p class="text-center" class="w-[30%]">Monto</p>
+                        <div id="montosEnFactura" class="text-center"></div>
+                    </div>
+                </div>
+                <div id="facturaTotalizar" class="flex flex-col items-end mr-[20px]">
+                    <div class="flex gap-[20px]"><p>Total Base: </p><span id="facturaTotalBase"></span></div>
+                    <div class="flex gap-[20px] border-b-[1px] border-black"><p>I.V.A(16%): </p><span id="facturaTotalIVA"></span></div>
+                    <div class="flex gap-[20px]"><p class="font-bold">TOTAL: </p><span id="facturaTotalFinal"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ventanaEmergenteCarrito" class="flex flex-col bg-[orange]/90 absolute top-[190px] p-[10px] w-[80%] left-[10%] h-[340px] overflow-auto">
+            <div>
+                <div class=" flex justify-end items-center">
+                    <button id="botonCerrarCarrito" class=""><span class="material-symbols-outlined">cancel</span></button>
+                </div>
+                <div class="flex justify-center items-center gap-[20px]">
+                    <button class="text-center" onclick="removerTodoDelCarrito()" >Remover Todos</button>
+                    <button class="text-center" onclick="abrirFactura()" >Realizar compra</button>
+                </div>
+            </div>
+            <div id="contenedorDeCarrito" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[5px] h-full items-center justify-center my-[10px]">
             </div>
     </div>
     <nav class="flex flex-col min-[300px]:bg-[#Efba34] min-[400px]:bg-[gray] sm:bg-[green] md:bg-[red] lg:bg-[blue] xl:bg-[white] ">
@@ -51,29 +112,25 @@
                 <!-- <span class="material-symbols-outlined text-[4.5rem] select-none hover:cursor-pointer flex items-center justify-center">account_circle</span> -->
             </div>
         </section>
-        <section class="flex h-[25px] bg-[skyblue] justify-center items-center">
-            <a href=""><h3 class="px-[5px] text-[1.1rem]">Acerca de Nosotros</h3></a>
-            <a href=""><h3 class="px-[5px] text-[1.1rem]">Contacto</h3></a>
-        </section>
-        <section class="flex h-[130px] justify-center items-center gap-[5%] ">
+        <section class="flex h-[80px] justify-center items-center gap-[3%] ">
                 <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=0;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3; principal()" >
-                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar">
+                    <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar">
                     <span class="font-bold text-[1.5rem]">Hogar</span>
                 </div>
                 <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=1;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()" >
-                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces">
+                    <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces">
                     <span class="font-bold text-[1.5rem]">Alimentos</span>
                 </div>
                 <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=2;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()" >
-                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia">
+                    <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia">
                     <span class="font-bold text-[1.5rem]">Tecnología</span>
                 </div>
                 <div class="flex hover:cursor-pointer flex-col items-center" onclick="indiceCategoria=3;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()">
-                    <img class="h-[70px] w-[70px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa">
+                    <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa">
                     <span class="font-bold text-[1.5rem]">Ropa</span>
                 </div>
         </section>
@@ -81,7 +138,7 @@
             <div class="flex flex-col md:flex-row md:gap-[5px]">
                 <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Consulta nuestros horarios para el Servicio a Domicilio,</p>
                 <p class="min-[300px]:text-[0.8rem] md:text-[1.1rem] lg:text-[1.3rem] select-none">Planifica tu entrega para el momento mas conveniente!</p>
-            </div>
+            </div>  
             <div class="flex gap-[10px] font-bold select-none">
                 <div id="clock" class=""></div>
                 <div id="calendar"></div>

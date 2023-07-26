@@ -1,4 +1,6 @@
 // document.getElementById("cuerpo").innerHTML = ``;
+
+
 let categorias = [
     {
         titulo: "Hogar Muebles y Cocina",
@@ -6,7 +8,7 @@ let categorias = [
         productos: [
             {
                 id: "101001",
-                titulo: "Cocina1",
+                titulo: "Cocina a Gas Condensa 4 hornillas 1 horno",
                 imagen: "./imagenes/cocina1.png",
                 precio: 60,
                 cantidadDisponible: 100,
@@ -492,264 +494,6 @@ let categorias = [
 // Codigo cambiar de categoria y producto - inicio
 
 
-// Codigo añadir y remover elementos del carrito - inicio
-let productosEnCarrito = [];
-
-let contadorDeCarrito = document.getElementById("contadorDeCarrito");
-
-let contenedorDeCarrito = document.getElementById("contenedorDeCarrito")
-
-
-function añadirAlCarritoDisplay1(){
-    if (productosEnCarrito.length === 0){
-        categorias[indiceCategoria].productos[indiceDisplay1].cantidadEnCarrito++;
-        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay1]);
-    }else{
-        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay1].id);
-        if (productoEnCarrito){
-            productoEnCarrito.cantidadEnCarrito++;
-        }else{
-            categorias[indiceCategoria].productos[indiceDisplay1].cantidadEnCarrito++;
-            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay1]);
-        }
-    }
-    console.table(productosEnCarrito);
-    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
-    contenedorDeCarrito.innerHTML=``;
-    productosEnCarrito.map(
-        (indiceDeProducto)=>{
-            let divProducto = document.createElement("div");
-
-
-            let parrafoNombreDeProducto = document.createElement("p");
-            let imagenDeProducto = document.createElement("img");
-            let parrafoPrecioProductoEnCarrito = document.createElement("p");
-            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
-            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
-            let removerProducto = document.createElement("p");
-            
-            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
-            removerProducto.innerHTML = '<span class="material-symbols-outlined">remove</span>';
-            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
-            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
-
-
-            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
-            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
-            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
-
-
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]");
-            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
-            parrafoNombreDeProducto.classList.add("text-[1rem]");
-            imagenDeProducto.classList.add("h-[80%]");
-            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
-            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
-            removerProducto.classList.add("select-none", "hover:cursor-pointer")
-
-
-            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
-            divProducto.appendChild(imagenDeProducto);
-            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
-            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
-
-
-
-            contenedorDeCarrito.appendChild(divProducto);
-            
-        }
-    )
-}
-
-function añadirAlCarritoDisplay2(){
-    if (productosEnCarrito.length === 0){
-        categorias[indiceCategoria].productos[indiceDisplay2].cantidadEnCarrito++;
-        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay2]);
-    }else{
-        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay2].id);
-        if (productoEnCarrito){
-            productoEnCarrito.cantidadEnCarrito++;
-        }else{
-            categorias[indiceCategoria].productos[indiceDisplay2].cantidadEnCarrito++;
-            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay2]);
-        }
-    }
-    console.table(productosEnCarrito);
-    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
-    contenedorDeCarrito.innerHTML=``;
-    productosEnCarrito.map(
-        (indiceDeProducto)=>{
-            let divProducto = document.createElement("div");
-
-
-            let parrafoNombreDeProducto = document.createElement("p");
-            let imagenDeProducto = document.createElement("img");
-            let parrafoPrecioProductoEnCarrito = document.createElement("p");
-            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
-            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
-            let removerProducto = document.createElement("p");
-            
-            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
-            removerProducto.innerHTML = '<span class="material-symbols-outlined">remove</span>';
-            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
-            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
-
-
-            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
-            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
-            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
-
-
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]");
-            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
-            parrafoNombreDeProducto.classList.add("text-[1rem]");
-            imagenDeProducto.classList.add("h-[80%]");
-            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
-            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
-            removerProducto.classList.add("select-none", "hover:cursor-pointer")
-
-
-            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
-            divProducto.appendChild(imagenDeProducto);
-            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
-            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
-
-
-
-            contenedorDeCarrito.appendChild(divProducto);
-            
-        }
-    )
-};
-
-function añadirAlCarritoDisplay3(){
-    if (productosEnCarrito.length === 0){
-        categorias[indiceCategoria].productos[indiceDisplay3].cantidadEnCarrito++;
-        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay3]);
-    }else{
-        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay3].id);
-        if (productoEnCarrito){
-            productoEnCarrito.cantidadEnCarrito++;
-        }else{
-            categorias[indiceCategoria].productos[indiceDisplay3].cantidadEnCarrito++;
-            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay3]);
-        }
-    }
-    console.table(productosEnCarrito);
-    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
-    contenedorDeCarrito.innerHTML=``;
-    productosEnCarrito.map(
-        (indiceDeProducto)=>{
-            let divProducto = document.createElement("div");
-
-
-            let parrafoNombreDeProducto = document.createElement("p");
-            let imagenDeProducto = document.createElement("img");
-            let parrafoPrecioProductoEnCarrito = document.createElement("p");
-            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
-            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
-            let removerProducto = document.createElement("p");
-            
-            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
-            removerProducto.innerHTML = '<span class="material-symbols-outlined">remove</span>';
-            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
-            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
-
-
-            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
-            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
-            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
-
-
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]");
-            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
-            parrafoNombreDeProducto.classList.add("text-[1rem]");
-            imagenDeProducto.classList.add("h-[80%]");
-            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
-            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
-            removerProducto.classList.add("select-none", "hover:cursor-pointer")
-
-
-            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
-            divProducto.appendChild(imagenDeProducto);
-            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
-            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
-
-
-
-            contenedorDeCarrito.appendChild(divProducto);
-            
-        }
-    )
-};
-
-function añadirAlCarritoDisplay4(){
-    if (productosEnCarrito.length === 0){
-        categorias[indiceCategoria].productos[indiceDisplay4].cantidadEnCarrito++;
-        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay4]);
-    }else{
-        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay4].id);
-        if (productoEnCarrito){
-            productoEnCarrito.cantidadEnCarrito++;
-        }else{
-            categorias[indiceCategoria].productos[indiceDisplay4].cantidadEnCarrito++;
-            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay4]);
-        }
-    }
-    console.table(productosEnCarrito);
-    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
-    contenedorDeCarrito.innerHTML=``;
-    productosEnCarrito.map(
-        (indiceDeProducto)=>{
-            let divProducto = document.createElement("div");
-
-
-            let parrafoNombreDeProducto = document.createElement("p");
-            let imagenDeProducto = document.createElement("img");
-            let parrafoPrecioProductoEnCarrito = document.createElement("p");
-            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
-            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
-            let removerProducto = document.createElement("p");
-            
-            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
-            removerProducto.innerHTML = '<span class="material-symbols-outlined">remove</span>';
-            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
-            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
-
-
-            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
-            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
-            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
-
-
-            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]");
-            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
-            parrafoNombreDeProducto.classList.add("text-[1rem]");
-            imagenDeProducto.classList.add("h-[80%]");
-            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
-            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
-            removerProducto.classList.add("select-none", "hover:cursor-pointer")
-
-
-            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
-            divProducto.appendChild(imagenDeProducto);
-            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
-            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
-
-
-
-            contenedorDeCarrito.appendChild(divProducto);
-            
-        }
-    )
-};
-
-function removerProductoDelCarrito(){
-
-}
-// Codigo añadir y remover elementos del carrito - inicio
-
-
 // Codigo Abrir y Cerrar el carrito - Inicio
 let botonAbrirCarrito = document.getElementById('botonAbrirCarrito');
 let ventanaEmergentecarrito = document.getElementById('ventanaEmergenteCarrito');
@@ -766,73 +510,467 @@ botonCerrarCarrito.addEventListener('click', function() {
 // Codigo Abrir y Cerrar el carrito - Inicio
 
 
+function abrirFactura(){
+    document.getElementById(`factura`).style.display = 'flex'
+}
+
+function cerrarFactura(){
+    document.getElementById(`factura`).style.display = 'none'
+}
+
+
+// Codigo añadir y remover elementos del carrito - inicio
+let productosEnCarrito = [];
+
+let contadorDeCarrito = document.getElementById("contadorDeCarrito");
+
+let contenedorDeCarrito = document.getElementById("contenedorDeCarrito");
+
+let contenedorDescripcion = document.getElementById("productosEnFactura");
+let contenedorCantidad = document.getElementById("cantidadesEnFactura");
+let contenedorMontos = document.getElementById("montosEnFactura");
+
+let ubicacionDeElementosEnCarrito = 0;
+
+let idDeLaUbicacion = [];
+
+
+let carritoCrudo = [];
+
+let montoTotal=[];
+
+
+
+function añadirAlCarritoDisplay1(){
+    if (productosEnCarrito.length === 0){
+        categorias[indiceCategoria].productos[indiceDisplay1].cantidadEnCarrito++;
+        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay1]);
+    }else{
+        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay1].id);
+        if (productoEnCarrito){
+            productoEnCarrito.cantidadEnCarrito++;
+        }else{
+            categorias[indiceCategoria].productos[indiceDisplay1].cantidadEnCarrito++;
+            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay1]);
+        }
+    }
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+    contenedorDeCarrito.innerHTML=``;
+    
+    productosEnCarrito.map(
+        (indiceDeProducto)=>{
+            // Agregando los productos al carrito
+            let divProducto = document.createElement("div");
+            divProducto.setAttribute("id", `${ubicacionDeElementosEnCarrito}`);
+
+            idDeLaUbicacion[ubicacionDeElementosEnCarrito] = indiceDeProducto.id;
+
+
+            let parrafoNombreDeProducto = document.createElement("p");
+            let imagenDeProducto = document.createElement("img");
+            let parrafoPrecioProductoEnCarrito = document.createElement("p");
+            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
+            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
+            let removerProducto = document.createElement("p");
+            
+            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
+            removerProducto.innerHTML = `<span onclick="removerElementoDelCarrito(this)" class="material-symbols-outlined">remove</span>`;
+            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
+            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto);
+
+
+            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
+            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
+            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
+
+
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
+            parrafoNombreDeProducto.classList.add("text-[1rem]");
+            imagenDeProducto.classList.add("h-[80%]");
+            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
+            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
+            removerProducto.classList.add("select-none", "hover:cursor-pointer")
+
+
+            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
+            divProducto.appendChild(imagenDeProducto);
+            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
+            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
+
+
+
+            contenedorDeCarrito.appendChild(divProducto);
+
+            
+            actualizarFactura()
+
+
+            ubicacionDeElementosEnCarrito++;
+        }
+    )
+    ubicacionDeElementosEnCarrito=0;
+}
+
+function añadirAlCarritoDisplay2(){
+    if (productosEnCarrito.length === 0){
+        categorias[indiceCategoria].productos[indiceDisplay2].cantidadEnCarrito++;
+        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay2]);
+    }else{
+        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay2].id);
+        if (productoEnCarrito){
+            productoEnCarrito.cantidadEnCarrito++;
+        }else{
+            categorias[indiceCategoria].productos[indiceDisplay2].cantidadEnCarrito++;
+            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay2]);
+        }
+    }
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+    contenedorDeCarrito.innerHTML=``;
+    productosEnCarrito.map(
+        (indiceDeProducto)=>{
+
+            let divProducto = document.createElement("div");
+            divProducto.setAttribute("id", `${ubicacionDeElementosEnCarrito}`);
+            idDeLaUbicacion[ubicacionDeElementosEnCarrito] = indiceDeProducto.id;
+
+            let parrafoNombreDeProducto = document.createElement("p");
+            let imagenDeProducto = document.createElement("img");
+            let parrafoPrecioProductoEnCarrito = document.createElement("p");
+            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
+            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
+            let removerProducto = document.createElement("p");
+            
+            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
+            removerProducto.innerHTML = '<span onclick="removerElementoDelCarrito(this)" class="material-symbols-outlined">remove</span>';
+            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
+            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
+
+
+            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
+            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
+            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
+
+
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
+            parrafoNombreDeProducto.classList.add("text-[1rem]");
+            imagenDeProducto.classList.add("h-[80%]");
+            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
+            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
+            removerProducto.classList.add("select-none", "hover:cursor-pointer")
+
+
+            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
+            divProducto.appendChild(imagenDeProducto);
+            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
+            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
+
+
+
+            contenedorDeCarrito.appendChild(divProducto);
+
+            ubicacionDeElementosEnCarrito++;
+            
+            actualizarFactura();
+        }
+    )
+    ubicacionDeElementosEnCarrito=0;
+};
+
+function añadirAlCarritoDisplay3(){
+    if (productosEnCarrito.length === 0){
+        categorias[indiceCategoria].productos[indiceDisplay3].cantidadEnCarrito++;
+        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay3]);
+    }else{
+        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay3].id);
+        if (productoEnCarrito){
+            productoEnCarrito.cantidadEnCarrito++;
+        }else{
+            categorias[indiceCategoria].productos[indiceDisplay3].cantidadEnCarrito++;
+            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay3]);
+        }
+    }
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+    contenedorDeCarrito.innerHTML=``;
+    productosEnCarrito.map(
+        (indiceDeProducto)=>{
+            let divProducto = document.createElement("div");
+            divProducto.setAttribute("id", `${ubicacionDeElementosEnCarrito}`);
+            idDeLaUbicacion[ubicacionDeElementosEnCarrito] = indiceDeProducto.id;
+
+
+            let parrafoNombreDeProducto = document.createElement("p");
+            let imagenDeProducto = document.createElement("img");
+            let parrafoPrecioProductoEnCarrito = document.createElement("p");
+            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
+            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
+            let removerProducto = document.createElement("p");
+            
+            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
+            removerProducto.innerHTML = '<span onclick="removerElementoDelCarrito(this)" class="material-symbols-outlined">remove</span>';
+            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
+            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
+
+
+            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
+            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
+            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
+
+
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
+            parrafoNombreDeProducto.classList.add("text-[1rem]");
+            imagenDeProducto.classList.add("h-[80%]");
+            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
+            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
+            removerProducto.classList.add("select-none", "hover:cursor-pointer")
+
+
+            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
+            divProducto.appendChild(imagenDeProducto);
+            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
+            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
+
+
+
+            contenedorDeCarrito.appendChild(divProducto);
+
+
+
+            ubicacionDeElementosEnCarrito++;
+            actualizarFactura();
+        }
+    )
+    ubicacionDeElementosEnCarrito=0;
+};
+
+function añadirAlCarritoDisplay4(){
+    if (productosEnCarrito.length === 0){
+        categorias[indiceCategoria].productos[indiceDisplay4].cantidadEnCarrito++;
+        productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay4]);
+    }else{
+        let productoEnCarrito = productosEnCarrito.find(producto => producto.id === categorias[indiceCategoria].productos[indiceDisplay4].id);
+        if (productoEnCarrito){
+            productoEnCarrito.cantidadEnCarrito++;
+        }else{
+            categorias[indiceCategoria].productos[indiceDisplay4].cantidadEnCarrito++;
+            productosEnCarrito.push(categorias[indiceCategoria].productos[indiceDisplay4]);
+        }
+    }
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+    contenedorDeCarrito.innerHTML=``;
+    productosEnCarrito.map(
+        (indiceDeProducto)=>{
+            let divProducto = document.createElement("div");
+            divProducto.setAttribute("id", `${ubicacionDeElementosEnCarrito}`);
+            idDeLaUbicacion[ubicacionDeElementosEnCarrito] = indiceDeProducto.id;
+
+
+            let parrafoNombreDeProducto = document.createElement("p");
+            let imagenDeProducto = document.createElement("img");
+            let parrafoPrecioProductoEnCarrito = document.createElement("p");
+            let parrafoCantidadEnCarritoDeProducto = document.createElement("p");
+            let contenedorTitulo_y_RemoverProducto = document.createElement("p");
+            let removerProducto = document.createElement("p");
+            
+            parrafoNombreDeProducto.innerText = `${indiceDeProducto.titulo}`;
+            removerProducto.innerHTML = '<span onclick="removerElementoDelCarrito(this)" class="material-symbols-outlined">remove</span>';
+            contenedorTitulo_y_RemoverProducto.appendChild(parrafoNombreDeProducto);
+            contenedorTitulo_y_RemoverProducto.appendChild(removerProducto)
+
+
+            imagenDeProducto.src = `${indiceDeProducto.imagen}`;
+            parrafoPrecioProductoEnCarrito.innerText = `Precio: ${indiceDeProducto.precio}$`;
+            parrafoCantidadEnCarritoDeProducto.innerText = `Cantidad a comprar: ${indiceDeProducto.cantidadEnCarrito}`;
+
+
+            divProducto.classList.add("flex", "flex-col", "justify-between", "bg-white", "rounded-lg", "p-[10px]", "w-[100%]", "min-[300px]:h-[80%]", "min-[400px]:h-[90%]", "sm:h-[100%]","lg:h-[80%]");
+            contenedorTitulo_y_RemoverProducto.classList.add("flex", "justify-between", "items-center", "h-[10%]");
+            parrafoNombreDeProducto.classList.add("text-[1rem]");
+            imagenDeProducto.classList.add("h-[80%]");
+            parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
+            parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
+            removerProducto.classList.add("select-none", "hover:cursor-pointer")
+
+
+            divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
+            divProducto.appendChild(imagenDeProducto);
+            divProducto.appendChild(parrafoPrecioProductoEnCarrito);
+            divProducto.appendChild(parrafoCantidadEnCarritoDeProducto);
+
+
+
+            contenedorDeCarrito.appendChild(divProducto);
+
+
+
+
+            ubicacionDeElementosEnCarrito++;
+            actualizarFactura();
+        }
+    )
+    ubicacionDeElementosEnCarrito=0;
+};
+
+function removerTodoDelCarrito (){
+    const miDiv = document.getElementById('contenedorDeCarrito');
+    while (miDiv.firstChild) {
+        miDiv.removeChild(miDiv.firstChild);
+    }
+    productosEnCarrito=[];
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+}
+
+function removerElementoDelCarrito(boton) {
+    // let divARemover = this.parentNode;
+    let divARemover = boton.parentNode; /* caracter - */
+    let padre = divARemover.parentNode; /* contenedor titulo item y caracter - */
+    let display = padre.parentNode; /* display del producto */
+    let contenedor = display.parentNode; /* contenedor de todos los displays en el carrito */
+    
+    let displayID = document.getElementById(`${display.id}`);
+    let contenedorID = document.getElementById(`${contenedor.id}`);
+
+    contenedorID.removeChild(displayID);
+    
+
+    if (contenedorDeCarrito.childElementCount === 0){
+        carritoCrudo=[];
+        idDeLaUbicacion=[];
+    }else{
+        carritoCrudo = productosEnCarrito.filter(producto =>  producto.id !== idDeLaUbicacion[display.id])
+    }
+
+    productosEnCarrito = carritoCrudo;
+    console.table(productosEnCarrito);
+    contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
+    actualizarFactura()
+    carritoCrudo=[];
+};
+
+// Codigo añadir y remover elementos del carrito - inicio
+
+// Codigo realizar compra - inicio
+
+function actualizarFactura(){
+    // Agregando los productos a la factura
+    let contador = 0;
+    let total = 0;
+    let IVA = 0;
+    let IVA2D = 0;
+    let totalFinal = 0;
+    contenedorDescripcion.innerHTML=``;
+    contenedorCantidad.innerHTML=``;
+    contenedorMontos.innerHTML=``;
+    // if (productosEnCarrito.isEmpty()){
+    //     montoTotal=0;
+    // }else{
+        productosEnCarrito.map(
+            (indiceDeProducto)=>{
+                let parrafoNombreDeProductoEnFactura = document.createElement("p");
+                let parrafoCantidadDeProductoEnFactura = document.createElement("p");
+                let parrafoMontoDeProductoEnFactura = document.createElement("p");
+        
+                parrafoNombreDeProductoEnFactura.innerText = `${indiceDeProducto.titulo}`;
+                parrafoCantidadDeProductoEnFactura.innerText = `${indiceDeProducto.cantidadEnCarrito}`;
+                montoTotal[contador] = indiceDeProducto.cantidadEnCarrito * indiceDeProducto.precio;
+                // console.clear()
+                console.log("primer impacto")
+                console.log(montoTotal)
+                parrafoMontoDeProductoEnFactura.innerText = `${montoTotal[contador]}$`;
+        
+                contenedorDescripcion.appendChild(parrafoNombreDeProductoEnFactura);
+                contenedorCantidad.appendChild(parrafoCantidadDeProductoEnFactura);
+                contenedorMontos.appendChild(parrafoMontoDeProductoEnFactura);
+                contador++;
+            }
+        )
+    // }
+    contador = 0;    
+    // let parrafoTotalBase = document.getElementById("facturaTotalBase");
+    // let parrafoIVA = document.getElementById("facturaTotalIVA");
+    // let parrafoTotalFinal = document.getElementById("facturaTotalFinal");
+    console.log("segundo impacto")
+    console.log(montoTotal);
+    total = montoTotal.reduce((anterior, actual) =>anterior + actual, 0);
+    IVA = (total * 0.16);
+    IVA2D = IVA.toFixed(2)
+    totalFinal = total + IVA;
+    document.getElementById("facturaTotalBase").innerText = `${total}`;
+    document.getElementById("facturaTotalIVA").innerText = `${IVA2D}`;
+    document.getElementById("facturaTotalFinal").innerText = `${totalFinal}`;
+}
+
+// Codigo realizar compra - final
+
 // Codigo mostrar pantalla principal - Inicio
-    function principal (){
-            document.getElementById("categoria").innerHTML = `
-                <div id="categoria">
-                    <div id="fondo" class="flex justify-center items-center w-full h-[360px] bg-[url('${categorias[indiceCategoria].fondo}')] gap-[5px]">
-                        <span id="botonCambiarCategoriaIzquierda" onclick="cambiarCategoriaIzquierda()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
-                        <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">${categorias[indiceCategoria].titulo}</h1>
-                        <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
-                    </div>
-                    <div class="flex mt-[10px]">
-                            <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_back</span>
-                        <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
-                            <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                                <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
-                                <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
-                                <div id="precio_y_cantidad" class="h-[15%]">
-                                    <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$</h3>
-                                    <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
-                                </div>
-                                <div class="flex justify-between items-center h-[10%]">
-                                    <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                    <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
-                                </div>
+function principal (){
+        document.getElementById("categoria").innerHTML = `
+            <div id="categoria">
+                <div id="fondo" class="flex justify-center items-center w-full h-[380px] bg-[url('${categorias[indiceCategoria].fondo}')] gap-[5px]">
+                    <span id="botonCambiarCategoriaIzquierda" onclick="cambiarCategoriaIzquierda()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
+                    <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">${categorias[indiceCategoria].titulo}</h1>
+                    <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
+                </div>
+                <div class="flex mt-[10px]">
+                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_back</span>
+                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
+                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
+                            <div id="precio_y_cantidad" class="h-[15%]">
+                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
                             </div>
-                            <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                                <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
-                                <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')]"></div>
-                                <div id="precio_y_cantidad" class="h-[15%]">
-                                    <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$</h3>
-                                    <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
-                                </div>
-                                <div class="flex justify-between items-center h-[10%]">
-                                    <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                    <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
-                                </div>
-                            </div>
-                            <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                                <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay3].titulo}</h1>
-                                <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')]"></div>
-                                <div id="precio_y_cantidad" class="h-[15%]">
-                                    <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$</h3>
-                                    <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
-                                </div>
-                                <div class="flex justify-between items-center h-[10%]">
-                                    <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                    <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
-                                </div>
-                            </div>
-                            <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                                <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay4].titulo}</h1>
-                                <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')]"></div>
-                                <div id="precio_y_cantidad" class="h-[15%]">
-                                    <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$</h3>
-                                    <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
-                                </div>
-                                <div class="flex justify-between items-center h-[10%]">
-                                    <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                    <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
-                                </div>
+                            <div class="flex justify-between items-center h-[10%]">
+                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
+                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
                             </div>
                         </div>
-                        <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_forward</span>
+                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')]"></div>
+                            <div id="precio_y_cantidad" class="h-[15%]">
+                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
+                            </div>
+                            <div class="flex justify-between items-center h-[10%]">
+                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
+                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                            </div>
+                        </div>
+                        <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay3].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')]"></div>
+                            <div id="precio_y_cantidad" class="h-[15%]">
+                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
+                            </div>
+                            <div class="flex justify-between items-center h-[10%]">
+                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
+                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                            </div>
+                        </div>
+                        <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay4].titulo}</h1>
+                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')]"></div>
+                            <div id="precio_y_cantidad" class="h-[15%]">
+                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
+                            </div>
+                            <div class="flex justify-between items-center h-[10%]">
+                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
+                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                            </div>
+                        </div>
                     </div>
+                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_forward</span>
                 </div>
-            `;
-        }
-    principal();
+            </div>
+        `;
+    }
+principal();
 // Codigo mostrar pantalla principal - Inicio
 
 

@@ -512,6 +512,8 @@ botonCerrarCarrito.addEventListener('click', function() {
 
 function abrirFactura(){
     document.getElementById(`factura`).style.display = 'flex'
+    let numeroFactura = Math.round(Math.random()*999999)
+    document.getElementById("numeroDeFactura").innerText = `${numeroFactura}`
 }
 
 function cerrarFactura(){
@@ -725,7 +727,7 @@ function añadirAlCarritoDisplay3(){
             parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
             parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
             removerProducto.classList.add("select-none", "hover:cursor-pointer")
-
+90
 
             divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
             divProducto.appendChild(imagenDeProducto);
@@ -913,51 +915,51 @@ function principal (){
                     <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">${categorias[indiceCategoria].titulo}</h1>
                     <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
                 </div>
-                <div class="flex mt-[10px]">
-                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_back</span>
-                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full min-[300px]:bg-[#Efba34] min-[400px]:bg-[darkgray] sm:bg-[green] md:bg-[darkred] lg:bg-[blue] xl:bg-[white] gap-[3%] px-[10%]">
-                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
+                <div class="flex ">
+                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none p-[10px] text-[#8e8e8e]">arrow_back</span>
+                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full bg-[#121212] gap-[3%] px-[10%]">
+                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
                             <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
+                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
                                 <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
                             </div>
                         </div>
-                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
+                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
                             <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
+                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
                                 <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
                             </div>
                         </div>
-                        <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay3].titulo}</h1>
+                        <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay3].titulo}</h1>
                             <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
+                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
                                 <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
                             </div>
                         </div>
-                        <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[gray]">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%]">${categorias[indiceCategoria].productos[indiceDisplay4].titulo}</h1>
+                        <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
+                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay4].titulo}</h1>
                             <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')]"></div>
                             <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto">Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
+                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$</h3>
+                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
@@ -965,7 +967,7 @@ function principal (){
                             </div>
                         </div>
                     </div>
-                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer border h-[280px] flex items-center select-none text-white">arrow_forward</span>
+                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none p-[10px] text-[#8e8e8e]">arrow_forward</span>
                 </div>
             </div>
         `;
@@ -987,6 +989,7 @@ function showClock(){
     let seconds = formatTime(date.getSeconds());
     let clock = `${hours} : ${minutes} : ${seconds}`;
     document.getElementById("clock").textContent = clock;
+    document.getElementById("relojFactura").textContent = clock;
 }
 
 function showCalendar(){
@@ -996,6 +999,7 @@ function showCalendar(){
     let year = date.getFullYear();
     let calendar = `${day}/${month}/${year}`;
     document.getElementById("calendar").textContent = calendar;
+    document.getElementById("fechaFactura").textContent = calendar;
 }
 
 function formatTime(time){

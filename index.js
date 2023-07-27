@@ -915,9 +915,9 @@ function principal (){
                     <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">${categorias[indiceCategoria].titulo}</h1>
                     <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
                 </div>
-                <div class="flex ">
-                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none text-[orange]">arrow_back</span>
-                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full bg-[#121212] gap-[3%] px-[10%]">
+                <div id="contenedorGridProductos" class="flex ">
+                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] ml-[5px] min-[400px]:ml-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_back</span>
+                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full gap-[3%] px-[3%]">
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
                             <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
                             <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
@@ -926,8 +926,8 @@ function principal (){
                                 <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
-                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                                <button class=" flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
+                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -939,7 +939,7 @@ function principal (){
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -951,7 +951,7 @@ function principal (){
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -963,11 +963,11 @@ function principal (){
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
                                 <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Añadir al carrito</button>
+                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" botonAñadirCarrito flex text-center items-center justify-center rounded-[50%] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem] text-[white]"><span class="material-symbols-outlined">add_circle</span></button>
                             </div>
                         </div>
                     </div>
-                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer h-[280px] flex items-center select-none text-[orange]">arrow_forward</span>
+                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] mr-[5px] min-[400px]:mr-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_forward</span>
                 </div>
             </div>
         `;

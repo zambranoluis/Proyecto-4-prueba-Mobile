@@ -509,7 +509,7 @@ botonCerrarCarrito.addEventListener('click', function() {
 });
 // Codigo Abrir y Cerrar el carrito - Inicio
 
-
+// Codigo Abrir y Cerrar Factura - Inicio
 function abrirFactura(){
     document.getElementById(`factura`).style.display = 'flex'
     let numeroFactura = Math.round(Math.random()*999999)
@@ -519,6 +519,49 @@ function abrirFactura(){
 function cerrarFactura(){
     document.getElementById(`factura`).style.display = 'none'
 }
+// Codigo Abrir y Cerrar Factura - Final
+
+// Codigo Abrir y Cerrar Descripcion - Inicio
+function abrirDescripcionDisplay1(){
+    document.getElementById(`displayProducto1`).style.display = 'none';
+    document.getElementById(`displayDescripcionProducto1`).style.display = 'flex';
+}
+
+function cerrarDescripcionDisplay1(){
+    document.getElementById(`displayProducto1`).style.display = 'flex';
+    document.getElementById(`displayDescripcionProducto1`).style.display = 'none';
+}
+
+function abrirDescripcionDisplay2(){
+    document.getElementById(`displayProducto2`).style.display = 'none';
+    document.getElementById(`displayDescripcionProducto2`).style.display = 'flex';
+}
+
+function cerrarDescripcionDisplay2(){
+    document.getElementById(`displayProducto2`).style.display = 'flex';
+    document.getElementById(`displayDescripcionProducto2`).style.display = 'none';
+}
+
+function abrirDescripcionDisplay3(){
+    document.getElementById(`displayProducto3`).style.display = 'none';
+    document.getElementById(`displayDescripcionProducto3`).style.display = 'flex';
+}
+
+function cerrarDescripcionDisplay3(){
+    document.getElementById(`displayProducto3`).style.display = 'flex';
+    document.getElementById(`displayDescripcionProducto3`).style.display = 'none';
+}
+
+function abrirDescripcionDisplay4(){
+    document.getElementById(`displayProducto4`).style.display = 'none';
+    document.getElementById(`displayDescripcionProducto4`).style.display = 'flex';
+}
+
+function cerrarDescripcionDisplay4(){
+    document.getElementById(`displayProducto4`).style.display = 'flex';
+    document.getElementById(`displayDescripcionProducto4`).style.display = 'none';
+}
+// Codigo Abrir y Cerrar Descripcion - Final
 
 
 // Codigo añadir y remover elementos del carrito - inicio
@@ -845,7 +888,6 @@ function removerElementoDelCarrito(boton) {
     }
 
     productosEnCarrito = carritoCrudo;
-    console.table(productosEnCarrito);
     contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
     actualizarFactura()
     carritoCrudo=[];
@@ -877,9 +919,6 @@ function actualizarFactura(){
                 parrafoNombreDeProductoEnFactura.innerText = `${indiceDeProducto.titulo}`;
                 parrafoCantidadDeProductoEnFactura.innerText = `${indiceDeProducto.cantidadEnCarrito}`;
                 montoTotal[contador] = indiceDeProducto.cantidadEnCarrito * indiceDeProducto.precio;
-                // console.clear()
-                console.log("primer impacto")
-                console.log(montoTotal)
                 parrafoMontoDeProductoEnFactura.innerText = `${montoTotal[contador]}$`;
         
                 contenedorDescripcion.appendChild(parrafoNombreDeProductoEnFactura);
@@ -893,8 +932,6 @@ function actualizarFactura(){
     // let parrafoTotalBase = document.getElementById("facturaTotalBase");
     // let parrafoIVA = document.getElementById("facturaTotalIVA");
     // let parrafoTotalFinal = document.getElementById("facturaTotalFinal");
-    console.log("segundo impacto")
-    console.log(montoTotal);
     total = montoTotal.reduce((anterior, actual) =>anterior + actual, 0);
     IVA = (total * 0.16);
     IVA2D = IVA.toFixed(2)
@@ -906,6 +943,12 @@ function actualizarFactura(){
 
 // Codigo realizar compra - final
 
+
+
+// Codigo Ver Descripcion y Cerrar Descripcion - inicio
+// Codigo Ver Descripcion y Cerrar Descripcion - final
+
+
 // Codigo mostrar pantalla principal - Inicio
 function principal (){
         let fondoCategoria = document.getElementById("fondoCategoria");
@@ -913,11 +956,7 @@ function principal (){
         let tituloCategoria = document.getElementById("tituloCategoria");
         tituloCategoria.innerText = `${categorias[indiceCategoria].titulo}`;
 
-        let titulosProductosDisplays = document.getElementsByClassName("tituloProducto");
-        titulosProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].titulo}`;
-        titulosProductosDisplays[1].innerText = `${categorias[indiceCategoria].productos[indiceDisplay2].titulo}`;
-        titulosProductosDisplays[2].innerText = `${categorias[indiceCategoria].productos[indiceDisplay3].titulo}`;
-        titulosProductosDisplays[3].innerText = `${categorias[indiceCategoria].productos[indiceDisplay4].titulo}`;
+        
 
         let imagenProductoDisplay = document.getElementsByClassName("imagenProductoDisplay");
         imagenProductoDisplay[0].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')`;
@@ -926,19 +965,17 @@ function principal (){
         imagenProductoDisplay[3].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')`;
 
         let i=0;
-        console.log(indiceCategoria)
         if(indiceCategoria === 0){
             for (i=0; i<imagenProductoDisplay.length; i++){
                 imagenProductoDisplay[i].style.backgroundColor = "#DAB387CC";
-                console.log(imagenProductoDisplay[i]);
             }
         }else if(indiceCategoria === 1){
             for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#FFC72CCC";
+                imagenProductoDisplay[i].style.backgroundColor = "#FFD700CC";
             }
         }else if(indiceCategoria === 2){
             for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#3EB489CC";
+                imagenProductoDisplay[i].style.backgroundColor = "#32CD32CC";
             }
         }else if(indiceCategoria === 3){
             for (i=0; i<imagenProductoDisplay.length; i++){
@@ -946,6 +983,36 @@ function principal (){
             }
         }
         
+        let titulosProductosDisplays = document.getElementsByClassName("tituloProducto");
+        titulosProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].titulo}`;
+        titulosProductosDisplays[1].innerText = `${categorias[indiceCategoria].productos[indiceDisplay2].titulo}`;
+        titulosProductosDisplays[2].innerText = `${categorias[indiceCategoria].productos[indiceDisplay3].titulo}`;
+        titulosProductosDisplays[3].innerText = `${categorias[indiceCategoria].productos[indiceDisplay4].titulo}`;
+
+        let precioProductosDisplays = document.getElementsByClassName("precioProducto");
+        precioProductosDisplays[0].innerText = `Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$`;
+        precioProductosDisplays[1].innerText = `Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$`;
+        precioProductosDisplays[2].innerText = `Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$`;
+        precioProductosDisplays[3].innerText = `Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$`;
+
+        let cantidadDisponibleProductosDisplays = document.getElementsByClassName("cantidadDisponibleProducto");
+        cantidadDisponibleProductosDisplays[0].innerText = `Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}`;
+        cantidadDisponibleProductosDisplays[1].innerText = `Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}`;
+        cantidadDisponibleProductosDisplays[2].innerText = `Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}`;
+        cantidadDisponibleProductosDisplays[3].innerText = `Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}`;
+
+        let titulosDescripcionProductosDisplays = document.getElementsByClassName("tituloDescripcionProducto");
+        titulosDescripcionProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].titulo}`;
+        titulosDescripcionProductosDisplays[1].innerText = `${categorias[indiceCategoria].productos[indiceDisplay2].titulo}`;
+        titulosDescripcionProductosDisplays[2].innerText = `${categorias[indiceCategoria].productos[indiceDisplay3].titulo}`;
+        titulosDescripcionProductosDisplays[3].innerText = `${categorias[indiceCategoria].productos[indiceDisplay4].titulo}`;
+
+        let imagenDescripcionProductoDisplay = document.getElementsByClassName("imagenDescripcionProductoDisplay");
+        imagenDescripcionProductoDisplay[0].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')`;
+        imagenDescripcionProductoDisplay[1].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')`;
+        imagenDescripcionProductoDisplay[2].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')`;
+        imagenDescripcionProductoDisplay[3].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')`;
+
 }
 principal();
 // Codigo mostrar pantalla principal - Inicio

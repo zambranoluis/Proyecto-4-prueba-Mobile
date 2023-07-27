@@ -35,6 +35,10 @@
         scrollbar-width: 1rem;
     }
 
+    .descripcionProducto{
+        scrollbar-width: none;
+    }
+
     nav{
         color: white;
         background-color: #5CEAEC;
@@ -50,11 +54,11 @@
 /* background-attachment: fixed; */
     }
 
-    .botonAñadirCarrito, .botonVerDescripcion{
+    .botonAñadirCarrito, .botonVerDescripcion, .botonCerrarDescripcion{
         background: #00BFFF ;
 
     }
-    .botonAñadirCarrito:hover, .botonVerDescripcion:hover{
+    .botonAñadirCarrito:hover, .botonVerDescripcion:hover, .botonCerrarDescripcion:hover{
         background: #4288C3;
     }
     
@@ -62,7 +66,7 @@
 
     #tituloBannerNav{
         font-family: 'Chelsea Market', cursive;
-        color: white;
+        color: #172554;
         line-height: 2rem;
     }
 </style>
@@ -116,8 +120,8 @@
                     <button id="botonCerrarCarrito" class=""><span class="material-symbols-outlined text-[orange]">cancel</span></button>
                 </div>
                 <div class="flex justify-center items-center gap-[10px]">
-                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3]" onclick="removerTodoDelCarrito()" ><span class="material-symbols-outlined">delete</span><span>Remover Todos</span></button>
-                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3]" onclick="abrirFactura()" ><span class="material-symbols-outlined">receipt_long</span><span>Realizar compra</span></button>
+                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3] text-slate-850" onclick="removerTodoDelCarrito()" ><span class="material-symbols-outlined">delete</span><span>Remover Todos</span></button>
+                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3] text-slate-850" onclick="abrirFactura()" ><span class="material-symbols-outlined">receipt_long</span><span>Realizar compra</span></button>
                 </div>
             </div>
             <div id="contenedorDeCarrito" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[5px] h-full items-center justify-center my-[10px]">
@@ -127,10 +131,10 @@
         <section class="flex  h-[60px] justify-between">
             <div class="flex items-center w-[80%] justify-evenly ">
                 <a href=""><img class=" h-[55px]" src="./imagenes/logo.png" alt="logoMnk"></a>
-                <a href=""><h1 id="tituloBannerNav" class=" select-none text-[black] text-center text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
+                <a href=""><h1 id="tituloBannerNav" class=" select-none text-center text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
             </div>
             <div class="flex w-[20%] justify-end mr-[5px] min-[400px]:mr-[15px] md:mr-[30px] items-center gap-[5px] sm:gap-[10px]">
-                <span id="botonAbrirCarrito" class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer flex flex-col justify-center items-center"><span id="contadorDeCarrito" class="flex relative font-bold text-[1.7rem] text-[#AB1FAB]">0</span>shopping_cart</span>
+                <span id="botonAbrirCarrito" class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer flex flex-col justify-center items-center text-[#172554]"><span id="contadorDeCarrito" class="flex relative font-bold text-[1.7rem] text-[#AB1FAB]">0</span>shopping_cart</span>
                 <img src="./imagenes/avatar.jpg" class="h-[45px] rounded-[50%] p-[1px] drop-shadow-lg" alt="avatarUsuario">
                 <!-- <span class="material-symbols-outlined text-[4.5rem] select-none hover:cursor-pointer flex items-center justify-center">account_circle</span> -->
             </div>
@@ -157,13 +161,13 @@
                     <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB]/80 hover:bg-[#880F88]/80">Ropa</span>
                 </div>
         </section>
-        <section class="flex h-[30px] bg-[#121212] justify-center items-center mt-[10px] px-[5px] gap-[20px] bg-[#AB1FAB]">
+        <section class="flex h-[30px] bg-[#121212] justify-center items-center mt-[10px] px-[5px] gap-[20px] md:gap-[50px] bg-[#AB1FAB]">
             <div class="flex flex-col md:flex-row md:gap-[5px] ">
                 <p class="min-[300px]:text-[1rem] sm:text-[1.3rem] md:text-[1.6rem] select-none ">Planifica tu entrega para el momento mas conveniente!</p>
             </div>  
             <div class="flex gap-[10px] font-bold select-none">
-                <div id="clock"></div>
-                <div id="calendar" class=""></div>
+                <div><p id="clock" class="sm:text-[1.3rem] md:text-[1.5rem]"></p></div>
+                <div><p id="calendar" class="sm:text-[1.3rem] md:text-[1.5rem]"></p></div>
             </div>
         </section>
     </nav>
@@ -187,8 +191,18 @@
                         <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
-                        <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                        <button id="botonVerDescripcion1" onclick="abrirDescripcionDisplay1()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
                         <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>
+                <div id="displayDescripcionProducto1" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
+                    <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
+                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto1" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
+                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    </div>
+                    <div class="flex justify-between items-center h-[10%]">
+                        <button id="botonCerrarDescripcion1" onclick="cerrarDescripcionDisplay1()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
                     </div>
                 </div>
                 <div id="displayProducto2" class="bg-[#AB1FAB]/80 flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
@@ -199,8 +213,18 @@
                         <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
-                        <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                        <button id="botonVerDescripcion2" onclick="abrirDescripcionDisplay2()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
                         <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>
+                <div id="displayDescripcionProducto2" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
+                    <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
+                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto2" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
+                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    </div>
+                    <div class="flex justify-between items-center h-[10%]">
+                        <button id="botonCerrarDescripcion2" onclick="cerrarDescripcionDisplay2()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
                     </div>
                 </div>
                 <div id="displayProducto3" class="bg-[#AB1FAB]/80 hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
@@ -211,8 +235,18 @@
                         <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%] pt-[5px]">
-                        <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                        <button id="botonVerDescripcion3" onclick="abrirDescripcionDisplay3()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
                         <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>
+                <div id="displayDescripcionProducto3" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
+                    <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
+                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto3" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
+                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    </div>
+                    <div class="flex justify-between items-center h-[10%]">
+                        <button id="botonCerrarDescripcion3" onclick="cerrarDescripcionDisplay3()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
                     </div>
                 </div>
                 <div id="displayProducto4" class="bg-[#AB1FAB]/80 hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
@@ -223,8 +257,18 @@
                         <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
-                        <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                        <button id="botonVerDescripcion4" onclick="abrirDescripcionDisplay4()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
                         <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" botonAñadirCarrito flex text-center items-center justify-center rounded-xl drop-shadow-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem] "><span class="material-symbols-outlined">add</span></button>
+                    </div>
+                </div>
+                <div id="displayDescripcionProducto4" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
+                    <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
+                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto4" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
+                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    </div>
+                    <div class="flex justify-between items-center h-[10%]">
+                        <button id="botonCerrarDescripcion4" onclick="cerrarDescripcionDisplay4()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
                     </div>
                 </div>
             </div>

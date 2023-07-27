@@ -908,70 +908,45 @@ function actualizarFactura(){
 
 // Codigo mostrar pantalla principal - Inicio
 function principal (){
-        document.getElementById("categoria").innerHTML = `
-            <div id="categoria">
-                <div id="fondo" class="flex justify-center items-center w-full h-[380px] bg-[url('${categorias[indiceCategoria].fondo}')] gap-[5px]">
-                    <span id="botonCambiarCategoriaIzquierda" onclick="cambiarCategoriaIzquierda()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_left</span>
-                    <h1 class="w-[70%] h-[20%] select-none flex justify-center items-center font-bold text-white text-center bg-[black]/70 rounded-[5px] px-[5px] min-[360px]:text-[2.5rem] sm:text-[3rem] md:text-[4rem]">${categorias[indiceCategoria].titulo}</h1>
-                    <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
-                </div>
-                <div id="contenedorGridProductos" class="flex ">
-                        <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] ml-[5px] min-[400px]:ml-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_back</span>
-                    <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full gap-[3%] px-[3%]">
-                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay1].titulo}</h1>
-                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')]"></div>
-                            <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay1].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
-                            </div>
-                            <div class="flex justify-between items-center h-[10%]">
-                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
-                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
-                            </div>
-                        </div>
-                        <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay2].titulo}</h1>
-                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')]"></div>
-                            <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay2].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
-                            </div>
-                            <div class="flex justify-between items-center h-[10%]">
-                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
-                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
-                            </div>
-                        </div>
-                        <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay3].titulo}</h1>
-                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')]"></div>
-                            <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay3].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
-                            </div>
-                            <div class="flex justify-between items-center h-[10%]">
-                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
-                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
-                            </div>
-                        </div>
-                        <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
-                            <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed]">${categorias[indiceCategoria].productos[indiceDisplay4].titulo}</h1>
-                            <div class="h-[65%] bg-contain bg-no-repeat bg-center bg-[url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')]"></div>
-                            <div id="precio_y_cantidad" class="h-[15%]">
-                                <h3 class="precioProducto text-[#ededed]">Precio: ${categorias[indiceCategoria].productos[indiceDisplay4].precio}$</h3>
-                                <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
-                            </div>
-                            <div class="flex justify-between items-center h-[10%]">
-                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
-                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" botonAñadirCarrito flex text-center items-center justify-center rounded-xl drop-shadow-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem] "><span class="material-symbols-outlined">add</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] mr-[5px] min-[400px]:mr-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_forward</span>
-                </div>
-            </div>
-        `;
-    }
+        let fondoCategoria = document.getElementById("fondoCategoria");
+        fondoCategoria.style.backgroundImage = `url(${categorias[indiceCategoria].fondo})`;
+        let tituloCategoria = document.getElementById("tituloCategoria");
+        tituloCategoria.innerText = `${categorias[indiceCategoria].titulo}`;
+
+        let titulosProductosDisplays = document.getElementsByClassName("tituloProducto");
+        titulosProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].titulo}`;
+        titulosProductosDisplays[1].innerText = `${categorias[indiceCategoria].productos[indiceDisplay2].titulo}`;
+        titulosProductosDisplays[2].innerText = `${categorias[indiceCategoria].productos[indiceDisplay3].titulo}`;
+        titulosProductosDisplays[3].innerText = `${categorias[indiceCategoria].productos[indiceDisplay4].titulo}`;
+
+        let imagenProductoDisplay = document.getElementsByClassName("imagenProductoDisplay");
+        imagenProductoDisplay[0].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay1].imagen}')`;
+        imagenProductoDisplay[1].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay2].imagen}')`;
+        imagenProductoDisplay[2].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')`;
+        imagenProductoDisplay[3].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')`;
+
+        let i=0;
+        console.log(indiceCategoria)
+        if(indiceCategoria === 0){
+            for (i=0; i<imagenProductoDisplay.length; i++){
+                imagenProductoDisplay[i].style.backgroundColor = "#DAB387CC";
+                console.log(imagenProductoDisplay[i]);
+            }
+        }else if(indiceCategoria === 1){
+            for (i=0; i<imagenProductoDisplay.length; i++){
+                imagenProductoDisplay[i].style.backgroundColor = "#FFC72CCC";
+            }
+        }else if(indiceCategoria === 2){
+            for (i=0; i<imagenProductoDisplay.length; i++){
+                imagenProductoDisplay[i].style.backgroundColor = "#3EB489CC";
+            }
+        }else if(indiceCategoria === 3){
+            for (i=0; i<imagenProductoDisplay.length; i++){
+                imagenProductoDisplay[i].style.backgroundColor = "#A29FD6CC";
+            }
+        }
+        
+}
 principal();
 // Codigo mostrar pantalla principal - Inicio
 

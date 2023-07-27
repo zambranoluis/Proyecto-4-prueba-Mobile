@@ -36,11 +36,11 @@
     }
 
     nav{
-    color:white;
-    background-color: #4288C3;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23fb701c' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23b5483a' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23fe4d3e' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b83948' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23fc3360' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b52d58' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23eb1574' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23b33f72' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23cf1a8e' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23a02c7a' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23ab1fab' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880f88' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-/* background-attachment: fixed; */
-/* background-size: cover; */
+        color: white;
+        background-color: #5CEAEC;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23f1ed2f' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23df7225' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23ffb810' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23e05238' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23ff7d38' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23d92e4c' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ff3a60' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23c90061' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23ee0088' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23ae0076' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+        /* background-attachment: fixed; */
+        /* background-size: cover; */
     }
 
     #contenedorGridProductos{
@@ -50,14 +50,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 /* background-attachment: fixed; */
     }
 
-    .botonAñadirCarrito{
-        background: #4288C3 ;
+    .botonAñadirCarrito, .botonVerDescripcion{
+        background: #00BFFF ;
 
     }
-    .botonAñadirCarrito:hover{
-        background: #00BFFF;
+    .botonAñadirCarrito:hover, .botonVerDescripcion:hover{
+        background: #4288C3;
     }
     
+
 
     #tituloBannerNav{
         font-family: 'Chelsea Market', cursive;
@@ -66,7 +67,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     }
 </style>
 <body id="cuerpo" class="flex flex-col overflow-x-hidden bg-[#4288C3]">
-    <div id="factura" class="flex hidden flex-col justify-center absolute z-10 left-[5%] top-[170px] m-[10px] min-[400px]:left-[12%] min-[450px]:left-[20%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%]">
+    <div id="factura" class="flex hidden flex-col justify-center absolute z-10 left-[5%] top-[175px] m-[10px] min-[400px]:left-[12%] min-[450px]:left-[20%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%]">
         <div class="h-[370px] w-[300px] sm:w-[500px]  bg-[#f5f5f5] ">
             <div class=" flex justify-end items-center p-[10px]">
                 <button id="botonCerrarFactura" onclick="cerrarFactura()" class=""><span id="spanCerrarFactura" class="material-symbols-outlined">cancel</span></button>
@@ -109,14 +110,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             </div>
         </div>
     </div>
-    <div id="ventanaEmergenteCarrito" class="flex flex-col bg-[#151515]/90 rounded-xl absolute top-[190px] p-[10px] w-[80%] left-[10%] h-[340px] overflow-auto">
+    <div id="ventanaEmergenteCarrito" class="flex flex-col bg-[#151515]/90 rounded-xl absolute top-[190px] p-[10px] w-[70%] left-[15%] h-[340px] overflow-auto">
             <div>
                 <div class=" flex justify-end items-center">
                     <button id="botonCerrarCarrito" class=""><span class="material-symbols-outlined text-[orange]">cancel</span></button>
                 </div>
-                <div class="flex justify-center items-center gap-[20px]">
-                    <button class="text-center bg-[red] rounded-lg p-[3px]" onclick="removerTodoDelCarrito()" >Remover Todos</button>
-                    <button class="text-center bg-[red] rounded-lg p-[3px]" onclick="abrirFactura()" >Realizar compra</button>
+                <div class="flex justify-center items-center gap-[10px]">
+                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3]" onclick="removerTodoDelCarrito()" ><span class="material-symbols-outlined">delete</span><span>Remover Todos</span></button>
+                    <button class="flex flex-col p-[3px] justify-center items-center text-center rounded-lg bg-[#00BFFF] hover:bg-[#4288C3]" onclick="abrirFactura()" ><span class="material-symbols-outlined">receipt_long</span><span>Realizar compra</span></button>
                 </div>
             </div>
             <div id="contenedorDeCarrito" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[5px] h-full items-center justify-center my-[10px]">
@@ -129,39 +130,39 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                 <a href=""><h1 id="tituloBannerNav" class=" select-none text-[black] text-center text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem]">Mr. Monka Donk <br class="min-[300px]:block sm:hidden">~ Da Store</h1></a>
             </div>
             <div class="flex w-[20%] justify-end mr-[5px] min-[400px]:mr-[15px] md:mr-[30px] items-center gap-[5px] sm:gap-[10px]">
-                <span id="botonAbrirCarrito" class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer flex flex-col justify-center items-center"><span id="contadorDeCarrito" class="flex relative font-bold text-[1.7rem] text-[orange]">0</span>shopping_cart</span>
+                <span id="botonAbrirCarrito" class="material-symbols-outlined text-[3.5rem] select-none hover:cursor-pointer flex flex-col justify-center items-center"><span id="contadorDeCarrito" class="flex relative font-bold text-[1.7rem] text-[#AB1FAB]">0</span>shopping_cart</span>
                 <img src="./imagenes/avatar.jpg" class="h-[45px] rounded-[50%] p-[1px] drop-shadow-lg" alt="avatarUsuario">
                 <!-- <span class="material-symbols-outlined text-[4.5rem] select-none hover:cursor-pointer flex items-center justify-center">account_circle</span> -->
             </div>
         </section>
         <section class="flex h-[80px] justify-center items-center gap-[3%] ">
-                <div class="flex hover:cursor-pointer flex-col items-center gap-[3px] " onclick="indiceCategoria=0;indiceDisplay1 = 0;
+                <div class="flex hover:cursor-pointer flex-col items-center gap-[6px] " onclick="indiceCategoria=0;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3; principal()" >
                     <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/hogar.jpg" alt="hogar">
-                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center  px-[5px] rounded-lg bg-[#AB1FAB] hover:bg-[#880F88]/80">Hogar</span>
+                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center  px-[5px] rounded-lg bg-[#AB1FAB]/80 hover:bg-[#880F88]/80">Hogar</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center gap-[3px]" onclick="indiceCategoria=1;indiceDisplay1 = 0;
+                <div class="flex hover:cursor-pointer flex-col items-center gap-[6px]" onclick="indiceCategoria=1;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()" >
                     <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/alimentosydulces.jpg" alt="alimentos_y_dulces">
-                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB] hover:bg-[#880F88]/80">Alimentos</span>
+                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB]/80 hover:bg-[#880F88]/80">Alimentos</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center gap-[3px]" onclick="indiceCategoria=2;indiceDisplay1 = 0;
+                <div class="flex hover:cursor-pointer flex-col items-center gap-[6px]" onclick="indiceCategoria=2;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()" >
                     <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/tecnologia.jpg" alt="tecnologia">
-                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB] hover:bg-[#880F88]/80">Tecnología</span>
+                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB]/80 hover:bg-[#880F88]/80">Tecnología</span>
                 </div>
-                <div class="flex hover:cursor-pointer flex-col items-center gap-[3px]" onclick="indiceCategoria=3;indiceDisplay1 = 0;
+                <div class="flex hover:cursor-pointer flex-col items-center gap-[6px]" onclick="indiceCategoria=3;indiceDisplay1 = 0;
                 indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()">
                     <img class="h-[50px] w-[50px] rounded-[50%] drop-shadow-lg" src="./imagenes/ropa.jpg" alt="ropa">
-                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB] hover:bg-[#880F88]/80">Ropa</span>
+                    <span class="font-bold text-[1.5rem] drop-shadow-lg text-center px-[5px] rounded-lg bg-[#AB1FAB]/80 hover:bg-[#880F88]/80">Ropa</span>
                 </div>
         </section>
-        <section class="flex h-[30px] bg-[#121212] justify-center items-center px-[5px] gap-[20px] bg-[#AB1FAB]">
+        <section class="flex h-[30px] bg-[#121212] justify-center items-center mt-[10px] px-[5px] gap-[20px] bg-[#AB1FAB]">
             <div class="flex flex-col md:flex-row md:gap-[5px] ">
-                <p class="min-[300px]:text-[1rem] sm:text-[1.3rem] lg:text-[1.3rem] select-none ">Planifica tu entrega para el momento mas conveniente!</p>
+                <p class="min-[300px]:text-[1rem] sm:text-[1.3rem] md:text-[1.6rem] select-none ">Planifica tu entrega para el momento mas conveniente!</p>
             </div>  
             <div class="flex gap-[10px] font-bold select-none">
-                <div id="clock" class=""></div>
+                <div id="clock"></div>
                 <div id="calendar"></div>
             </div>
         </section>

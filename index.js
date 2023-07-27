@@ -8,7 +8,7 @@ let categorias = [
         productos: [
             {
                 id: "101001",
-                titulo: "Cocina a Gas Condensa 4 hornillas 1 horno",
+                titulo: "Cocina Mabe a Gas a 4 hornillas",
                 imagen: "./imagenes/cocina1.png",
                 precio: 60,
                 cantidadDisponible: 100,
@@ -16,7 +16,7 @@ let categorias = [
             },
             {
                 id: "101002",
-                titulo: "Cocina2",
+                titulo: "Cocina Starlux a Gas a 4 hornillas",
                 imagen: "./imagenes/cocina2.png",
                 precio: 70,
                 cantidadDisponible: 100,
@@ -24,7 +24,7 @@ let categorias = [
             },
             {
                 id: "101003",
-                titulo: "Cocina3",
+                titulo: "Cocina Venezia a Gas a 4 hornillas",
                 imagen: "./imagenes/cocina3.png",
                 precio: 80,
                 cantidadDisponible: 100,
@@ -32,7 +32,7 @@ let categorias = [
             },
             {
                 id: "101004",
-                titulo: "Microondas1",
+                titulo: "Microondas Oster",
                 imagen: "./imagenes/microondas1.png",
                 precio: 60,
                 cantidadDisponible: 60,
@@ -40,7 +40,7 @@ let categorias = [
             },
             {
                 id: "101005",
-                titulo: "Microondas2",
+                titulo: "Microondas Whirpool",
                 imagen: "./imagenes/microondas2.png",
                 precio: 70,
                 cantidadDisponible: 60,
@@ -48,7 +48,7 @@ let categorias = [
             },
             {
                 id: "101006",
-                titulo: "Microondas3",
+                titulo: "Microondas Samsung",
                 imagen: "./imagenes/microondas3.png",
                 precio: 80,
                 cantidadDisponible: 60,
@@ -56,7 +56,7 @@ let categorias = [
             },
             {
                 id: "101007",
-                titulo: "Microondas4",
+                titulo: "Microondas Frigilux",
                 imagen: "./imagenes/microondas4.png",
                 precio: 90,
                 cantidadDisponible: 60,
@@ -64,7 +64,7 @@ let categorias = [
             },
             {
                 id: "101008",
-                titulo: "Nevera1",
+                titulo: "Nevera Haier",
                 imagen: "./imagenes/nevera1.png",
                 precio: 100,
                 cantidadDisponible: 80,
@@ -72,7 +72,7 @@ let categorias = [
             },
             {
                 id: "101009",
-                titulo: "Nevera2",
+                titulo: "Nevera Mabe",
                 imagen: "./imagenes/nevera2.png",
                 precio: 110,
                 cantidadDisponible: 80,
@@ -86,7 +86,7 @@ let categorias = [
         productos: [
             {
                 id: "201001",
-                titulo: "Tomate",
+                titulo: "Tomate por kg",
                 imagen: "./imagenes/tomate.png",
                 precio: 2,
                 cantidadDisponible: 90,
@@ -94,7 +94,7 @@ let categorias = [
             },
             {
                 id: "201002",
-                titulo: "Cebolla",
+                titulo: "Cebolla por kg",
                 imagen: "./imagenes/cebolla.png",
                 precio: 2.5,
                 cantidadDisponible: 90,
@@ -102,7 +102,7 @@ let categorias = [
             },
             {
                 id: "201003",
-                titulo: "Brocoli",
+                titulo: "Brocoli por kg",
                 imagen: "./imagenes/brocoli.png",
                 precio: 3,
                 cantidadDisponible: 90,
@@ -110,7 +110,7 @@ let categorias = [
             },
             {
                 id: "201004",
-                titulo: "Zanahoria",
+                titulo: "Zanahoria por kg",
                 imagen: "./imagenes/zanahoria.png",
                 precio: 3.5,
                 cantidadDisponible: 90,
@@ -118,7 +118,7 @@ let categorias = [
             },
             {
                 id: "201005",
-                titulo: "Carne1",
+                titulo: "Paleta de ciervo por kg",
                 imagen: "./imagenes/carne1.png",
                 precio: 5,
                 cantidadDisponible: 90,
@@ -126,7 +126,7 @@ let categorias = [
             },
             {
                 id: "201006",
-                titulo: "Carne2",
+                titulo: "Solomillo de gamo por kg",
                 imagen: "./imagenes/carne2.png",
                 precio: 5.5,
                 cantidadDisponible: 90,
@@ -134,7 +134,7 @@ let categorias = [
             },
             {
                 id: "201007",
-                titulo: "Pollo",
+                titulo: "Pollo entero (precio por kg)",
                 imagen: "./imagenes/pollo.png",
                 precio: 6,
                 cantidadDisponible: 90,
@@ -142,7 +142,7 @@ let categorias = [
             },
             {
                 id: "201008",
-                titulo: "Sodas en Lata",
+                titulo: "Sodas en Lata 6-pack",
                 imagen: "./imagenes/sodasLata.png",
                 precio: 12,
                 cantidadDisponible: 200,
@@ -150,7 +150,7 @@ let categorias = [
             },
             {
                 id: "201009",
-                titulo: "Jugo de Mango",
+                titulo: "Jugo de Mango 475mL 6-pack",
                 imagen: "./imagenes/jugoMango.png",
                 precio: 8,
                 cantidadDisponible: 200,
@@ -158,7 +158,7 @@ let categorias = [
             },
             {
                 id: "201010",
-                titulo: "Jugo de Manzana",
+                titulo: "Jugo de Manzana 475mL 6-pack",
                 imagen: "./imagenes/jugoManzana.png",
                 precio: 8,
                 cantidadDisponible: 200,
@@ -166,7 +166,7 @@ let categorias = [
             },
             {
                 id: "201011",
-                titulo: "Chocolate Ferrero Rocher",
+                titulo: "Bandeja Chocolate Ferrero Rocher 8 piezas",
                 imagen: "./imagenes/ferrero.png",
                 precio: 15,
                 cantidadDisponible: 300,
@@ -174,7 +174,7 @@ let categorias = [
             },
             {
                 id: "201012",
-                titulo: "Chocolate Snicker",
+                titulo: "Chocolate Snicker 6 piezas 316g",
                 imagen: "./imagenes/snicker.png",
                 precio: 16,
                 cantidadDisponible: 300,
@@ -182,7 +182,7 @@ let categorias = [
             },
             {
                 id: "201013",
-                titulo: "Chocolate Milky Way",
+                titulo: "Chocolate Milky Way 6 piezas 313g",
                 imagen: "./imagenes/milkyway.png",
                 precio: 17,
                 cantidadDisponible: 300,
@@ -190,7 +190,7 @@ let categorias = [
             },
             {
                 id: "201014",
-                titulo: "Chocolate M&M",
+                titulo: "Chocolate M&M 47g",
                 imagen: "./imagenes/mm.png",
                 precio: 18,
                 cantidadDisponible: 300,
@@ -204,7 +204,7 @@ let categorias = [
         productos: [
             {
                 id: "301001",
-                titulo: "PC 1",
+                titulo: "PC Core i3 8GB RAM 256 SSD y componentes",
                 imagen: "./imagenes/pc1.png",
                 precio: 800,
                 cantidadDisponible: 50,
@@ -212,7 +212,7 @@ let categorias = [
             },
             {
                 id: "301002",
-                titulo: "PC 2",
+                titulo: "PC Core i5 16GB RAM 512 SSD y componentes",
                 imagen: "./imagenes/pc2.png",
                 precio: 900,
                 cantidadDisponible: 50,
@@ -220,7 +220,7 @@ let categorias = [
             },
             {
                 id: "301003",
-                titulo: "PC 3",
+                titulo: "PC Core i7 16GB RAM 1TB SSD y componentes",
                 imagen: "./imagenes/pc3.png",
                 precio: 1000,
                 cantidadDisponible: 50,
@@ -228,7 +228,7 @@ let categorias = [
             },
             {
                 id: "301004",
-                titulo: "PC 4",
+                titulo: "PC Core i9 32GB RAM 4TB SSD y componentes",
                 imagen: "./imagenes/pc4.png",
                 precio: 1100,
                 cantidadDisponible: 50,
@@ -236,7 +236,7 @@ let categorias = [
             },
             {
                 id: "301005",
-                titulo: "Laptop 1",
+                titulo: "Laptop Lenovo Core i3 8GB RAM 256 SSD",
                 imagen: "./imagenes/laptop1.png",
                 precio: 500,
                 cantidadDisponible: 60,
@@ -244,7 +244,7 @@ let categorias = [
             },
             {
                 id: "301006",
-                titulo: "Laptop 2",
+                titulo: "Laptop HP Core i5 16GB RAM 512 SSD",
                 imagen: "./imagenes/laptop2.png",
                 precio: 550,
                 cantidadDisponible: 60,
@@ -252,7 +252,7 @@ let categorias = [
             },
             {
                 id: "301007",
-                titulo: "Laptop 3",
+                titulo: "Laptop Cyberlux Core i7 32GB RAM 1TB SSD",
                 imagen: "./imagenes/laptop3.png",
                 precio: 600,
                 cantidadDisponible: 60,
@@ -260,7 +260,7 @@ let categorias = [
             },
             {
                 id: "301008",
-                titulo: "Laptop 4",
+                titulo: "Laptop Dell Core i7 32GB RAM 1TB SSD",
                 imagen: "./imagenes/laptop4.png",
                 precio: 700,
                 cantidadDisponible: 60,
@@ -268,7 +268,7 @@ let categorias = [
             },
             {
                 id: "301009",
-                titulo: "PS4",
+                titulo: "PS4 1TB",
                 imagen: "./imagenes/ps4.png",
                 precio: 450,
                 cantidadDisponible: 80,
@@ -276,7 +276,7 @@ let categorias = [
             },
             {
                 id: "301010",
-                titulo: "PS5",
+                titulo: "PS5 1TB",
                 imagen: "./imagenes/ps5.png",
                 precio: 600,
                 cantidadDisponible: 80,
@@ -284,7 +284,7 @@ let categorias = [
             },
             {
                 id: "301011",
-                titulo: "Telefono 1",
+                titulo: "Telefono Infinix Hot 20i",
                 imagen: "./imagenes/telefono1.png",
                 precio: 150,
                 cantidadDisponible: 90,
@@ -292,7 +292,7 @@ let categorias = [
             },
             {
                 id: "301012",
-                titulo: "Telefono 2",
+                titulo: "Telefono Xiaomi Redmi 12c",
                 imagen: "./imagenes/telefono2.png",
                 precio: 250,
                 cantidadDisponible: 90,
@@ -300,7 +300,7 @@ let categorias = [
             },
             {
                 id: "301013",
-                titulo: "Telefono 3",
+                titulo: "Telefono Xiaomi Redmi A1",
                 imagen: "./imagenes/telefono3.png",
                 precio: 300,
                 cantidadDisponible: 90,
@@ -314,7 +314,7 @@ let categorias = [
         productos:[
             {
                 id: "401001",
-                titulo: "Mujer 1",
+                titulo: "Blusa para Mujer con estampado de Mickey Mouse",
                 imagen: "./imagenes/mujer1.png",
                 precio: 10,
                 cantidadDisponible: 60,
@@ -322,7 +322,7 @@ let categorias = [
             },
             {
                 id: "401002",
-                titulo: "Mujer 2",
+                titulo: "Blusa para Dama con diversos estilos atrevidos",
                 imagen: "./imagenes/mujer2.png",
                 precio: 8,
                 cantidadDisponible: 60,
@@ -330,7 +330,7 @@ let categorias = [
             },
             {
                 id: "401003",
-                titulo: "Mujer 3",
+                titulo: "Licras Kirius unicolor",
                 imagen: "./imagenes/mujer3.png",
                 precio: 12,
                 cantidadDisponible: 70,
@@ -338,7 +338,7 @@ let categorias = [
             },
             {
                 id: "401004",
-                titulo: "Hombre 1",
+                titulo: "Boxer Calvin Klein para Hombres",
                 imagen: "./imagenes/hombre1.png",
                 precio: 5,
                 cantidadDisponible: 100,
@@ -346,7 +346,7 @@ let categorias = [
             },
             {
                 id: "401005",
-                titulo: "Hombre 2",
+                titulo: "Medias deportivas Tallas para Adultos",
                 imagen: "./imagenes/hombre2.png",
                 precio: 6,
                 cantidadDisponible: 100,
@@ -354,7 +354,7 @@ let categorias = [
             },
             {
                 id: "401006",
-                titulo: "Hombre 3",
+                titulo: "Franela deportiva manga larga para hombres",
                 imagen: "./imagenes/hombre3.png",
                 precio: 7,
                 cantidadDisponible: 60,
@@ -362,7 +362,7 @@ let categorias = [
             },
             {
                 id: "401007",
-                titulo: "Niña 1",
+                titulo: "Pijada de 2 piezas para niña o niño",
                 imagen: "./imagenes/niña1.png",
                 precio: 8,
                 cantidadDisponible: 80,
@@ -370,7 +370,7 @@ let categorias = [
             },
             {
                 id: "401008",
-                titulo: "Niña 2",
+                titulo: "Medias coloridas para niñas",
                 imagen: "./imagenes/niña2.png",
                 precio: 3,
                 cantidadDisponible:50,
@@ -378,7 +378,7 @@ let categorias = [
             },
             {
                 id: "401009",
-                titulo: "Niña 3",
+                titulo: "Vestido blanco con estampado, para niñas",
                 imagen: "./imagenes/niña3.png",
                 precio: 6,
                 cantidadDisponible: 60,
@@ -386,7 +386,7 @@ let categorias = [
             },
             {
                 id: "401010",
-                titulo: "Niño 1",
+                titulo: "Short y franela deportiva para niños",
                 imagen: "./imagenes/niño1.png",
                 precio: 6,
                 cantidadDisponible: 60,
@@ -926,8 +926,8 @@ function principal (){
                                 <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay1].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
-                                <button class=" flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
+                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                                <button id="botonAñadirCarrito1" onclick="añadirAlCarritoDisplay1()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] min-[300px]:text-[0.6rem]  min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -938,8 +938,8 @@ function principal (){
                                 <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay2].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
-                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
+                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                                <button id="botonAñadirCarrito2" onclick="añadirAlCarritoDisplay2()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -950,8 +950,8 @@ function principal (){
                                 <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay3].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
-                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" botonAñadirCarrito flex text-center items-center rounded-[50%] text-white min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add_circle</span></button>
+                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                                <button id="botonAñadirCarrito3" onclick="añadirAlCarritoDisplay3()" class=" botonAñadirCarrito flex text-center items-center rounded-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">add</span></button>
                             </div>
                         </div>
                         <div id="displayProducto" class="hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] bg-[#343434] rounded-xl">
@@ -962,8 +962,8 @@ function principal (){
                                 <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: ${categorias[indiceCategoria].productos[indiceDisplay4].cantidadDisponible}</h3>
                             </div>
                             <div class="flex justify-between items-center h-[10%]">
-                                <button class=" flex text-center items-center bg-[red] rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]">Ver descripción</button>
-                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" botonAñadirCarrito flex text-center items-center justify-center rounded-[50%] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem] text-[white]"><span class="material-symbols-outlined">add_circle</span></button>
+                                <button class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
+                                <button id="botonAñadirCarrito4" onclick="añadirAlCarritoDisplay4()" class=" botonAñadirCarrito flex text-center items-center justify-center rounded-xl drop-shadow-xl min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem] "><span class="material-symbols-outlined">add</span></button>
                             </div>
                         </div>
                     </div>

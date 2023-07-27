@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="./imagenes/FavMnk.png" type="image/x-icon">
     <!-- CDN de Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CDN de AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Importaciones de Google -->
     <!-- Fuentes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,14 +32,14 @@
     html{
         scrollbar-width: none;
     }
+    .descripcionProducto, .parrafoDescripcionProducto{
+        scrollbar-width: none;
+    }
 
     #ventanaEmergenteCarrito{
         scrollbar-width: 1rem;
     }
 
-    .descripcionProducto{
-        scrollbar-width: none;
-    }
 
     nav{
         color: white;
@@ -185,10 +187,10 @@
             <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full gap-[3%] px-[3%]">
                 <div id="displayProducto1" class="bg-[#AB1FAB]/80 flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
                     <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
-                    <div class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="precio_y_cantidad" class="h-[15%] pt-[5px]">
-                        <h3 class="precioProducto text-[#ededed]">Precio: </h3>
-                        <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
+                        <h3 class="precioProducto text-[#ededed] min-[400px]:text-[1.2rem]">Precio: </h3>
+                        <h3 class="cantidadDisponibleProducto text-[#ededed] min-[400px]:text-[1.2rem]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonVerDescripcion1" onclick="abrirDescripcionDisplay1()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
@@ -197,9 +199,9 @@
                 </div>
                 <div id="displayDescripcionProducto1" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
                     <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
-                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
-                    <div id="descripcionProducto1" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
-                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    <div data-aos="zoom-in" class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto1" class="descripcionProducto h-[15%] pt-[5px] max-h-full overflow-scroll overflow-x-hidden">
+                        <p id="parrafoDescripcionProducto1" class="parrafoDescripcionProducto h-full max-h-full overflow-scroll overflow-x-hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonCerrarDescripcion1" onclick="cerrarDescripcionDisplay1()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
@@ -207,10 +209,10 @@
                 </div>
                 <div id="displayProducto2" class="bg-[#AB1FAB]/80 flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
                     <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">Titulo P2</h1>
-                    <div class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="precio_y_cantidad" class="h-[15%] pt-[5px]">
-                        <h3 class="precioProducto text-[#ededed]">Precio: </h3>
-                        <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
+                        <h3 class="precioProducto text-[#ededed] min-[400px]:text-[1.2rem]">Precio: </h3>
+                        <h3 class="cantidadDisponibleProducto text-[#ededed] min-[400px]:text-[1.2rem]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonVerDescripcion2" onclick="abrirDescripcionDisplay2()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
@@ -219,9 +221,9 @@
                 </div>
                 <div id="displayDescripcionProducto2" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
                     <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
-                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="descripcionProducto2" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
-                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                        <p id="parrafoDescripcionProducto2" class="parrafoDescripcionProducto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonCerrarDescripcion2" onclick="cerrarDescripcionDisplay2()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
@@ -229,10 +231,10 @@
                 </div>
                 <div id="displayProducto3" class="bg-[#AB1FAB]/80 hidden sm:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
                     <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">Titulo p3</h1>
-                    <div class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="precio_y_cantidad" class="h-[15%] pt-[5px]">
-                        <h3 class="precioProducto text-[#ededed]">Precio: </h3>
-                        <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
+                        <h3 class="precioProducto text-[#ededed] min-[400px]:text-[1.2rem]">Precio: </h3>
+                        <h3 class="cantidadDisponibleProducto text-[#ededed] min-[400px]:text-[1.2rem]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%] pt-[5px]">
                         <button id="botonVerDescripcion3" onclick="abrirDescripcionDisplay3()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
@@ -241,9 +243,9 @@
                 </div>
                 <div id="displayDescripcionProducto3" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
                     <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
-                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="descripcionProducto3" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
-                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                        <p id="parrafoDescripcionProducto3" class="parrafoDescripcionProducto max-height-full overflow-scroll overflow-x-hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonCerrarDescripcion3" onclick="cerrarDescripcionDisplay3()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
@@ -251,10 +253,10 @@
                 </div>
                 <div id="displayProducto4" class="bg-[#AB1FAB]/80 hidden lg:flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl">
                     <h1 class="tituloProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">Titulo p4</h1>
-                    <div class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div data-aos="zoom-in" class="imagenProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
                     <div id="precio_y_cantidad" class="h-[15%]">
-                        <h3 class="precioProducto text-[#ededed]">Precio: </h3>
-                        <h3 class="cantidadDisponibleProducto text-[#ededed]">Cantidad disponible: </h3>
+                        <h3 class="precioProducto text-[#ededed] min-[400px]:text-[1.2rem]">Precio: </h3>
+                        <h3 class="cantidadDisponibleProducto text-[#ededed] min-[400px]:text-[1.2rem]">Cantidad disponible: </h3>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonVerDescripcion4" onclick="abrirDescripcionDisplay4()" class="botonVerDescripcion flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">manage_search</span></button>
@@ -263,9 +265,9 @@
                 </div>
                 <div id="displayDescripcionProducto4" class="bg-[#AB1FAB]/80 hidden flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
                     <h1 class="tituloDescripcionProducto font-bold text-[1.3rem] h-[10%] text-[#ededed] truncate overflow-ellipsis">titulo P2</h1>
-                    <div class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
-                    <div id="descripcionProducto4" class="descripcionProducto h-[15%] pt-[5px] max-height-full overflow-scroll overflow-x-hidden">
-                        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
+                    <div data-aos="zoom-in" class="imagenDescripcionProductoDisplay h-[60%] bg-contain bg-no-repeat bg-center rounded-xl"></div>
+                    <div id="descripcionProducto4" class="descripcionProducto h-[15%] pt-[5px] max-h-[15%] overflow-scroll overflow-x-hidden">
+                        <p id="parrafoDescripcionProducto4" class="parrafoDescripcionProducto max-height-full overflow-scroll overflow-x-hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nam veritatis rem velit quaerat praesentium ullam? Expedita error maiores repellendus, maxime aperiam quam quibusdam placeat tempora voluptas officiis? Accusamus, veritatis.</p>
                     </div>
                     <div class="flex justify-between items-center h-[10%]">
                         <button id="botonCerrarDescripcion4" onclick="cerrarDescripcionDisplay4()" class="botonCerrarDescripcion text-[#172554] flex text-center items-center rounded-lg px-[3px] min-[300px]:text-[0.6rem] min-[400px]:text-[0.8rem] md:text-[1rem]"><span class="material-symbols-outlined">search_off</span></button>
@@ -280,3 +282,8 @@
 <!-- Importacion de Javascript -->
 <script src="./index.js"></script>
 </html>
+<!-- Importo el Javascript de AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

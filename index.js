@@ -12,7 +12,8 @@ let categorias = [
                 imagen: "./imagenes/cocina1.png",
                 precio: 60,
                 cantidadDisponible: 100,
-                cantidadEnCarrito: 0
+                cantidadEnCarrito: 0,
+                descripcion: "DESCRIPCIÓN DEL PRODUCTO: \n*Producto Oficial Mabe*\n·Variedad de platos con diferentes potencias para preparar todos tus platillos.\n·Grill superior a Gas, tú decides qué toque final necesitan tus platillos: asado, dorado, tostado o gratinado.\n·Parrilla autodeslizable con amplia extensión para evitar posiciones incómodas o inseguras al momento de retirar tus alimentos.\n·Recubrimiento interior Easy Clean Pro.\n·La evolución de la limpieza continua, tan fácil de limpiar como un vidrio."
             },
             {
                 id: "101002",
@@ -20,7 +21,8 @@ let categorias = [
                 imagen: "./imagenes/cocina2.png",
                 precio: 70,
                 cantidadDisponible: 100,
-                cantidadEnCarrito: 0
+                cantidadEnCarrito: 0,
+                descripcion: "DESCRIPCIÓN DEL PRODUCTO: \n*Producto Oficial Starlux*\n·Variedad de platos con diferentes potencias para preparar todos tus platillos.\n\n·Grill superior a Gas, tú decides qué toque final necesitan tus platillos: asado, dorado, tostado o gratinado.\n·Parrilla autodeslizable con amplia extensión para evitar posiciones incómodas o inseguras al momento de retirar tus alimentos.\n·Recubrimiento interior Easy Clean Pro.\n·La evolución de la limpieza continua, tan fácil de limpiar como un vidrio."
             },
             {
                 id: "101003",
@@ -28,7 +30,8 @@ let categorias = [
                 imagen: "./imagenes/cocina3.png",
                 precio: 80,
                 cantidadDisponible: 100,
-                cantidadEnCarrito: 0
+                cantidadEnCarrito: 0,
+                descripcion: "DESCRIPCIÓN DEL PRODUCTO: \n*Producto Oficial Venezia*\n·Variedad de platos con diferentes potencias para preparar todos tus platillos.\n\n·Grill superior a Gas, tú decides qué toque final necesitan tus platillos: asado, dorado, tostado o gratinado.\n·Parrilla autodeslizable con amplia extensión para evitar posiciones incómodas o inseguras al momento de retirar tus alimentos.\n·Recubrimiento interior Easy Clean Pro.\n·La evolución de la limpieza continua, tan fácil de limpiar como un vidrio."
             },
             {
                 id: "101004",
@@ -36,7 +39,8 @@ let categorias = [
                 imagen: "./imagenes/microondas1.png",
                 precio: 60,
                 cantidadDisponible: 60,
-                cantidadEnCarrito: 0
+                cantidadEnCarrito: 0,
+                // descripcion: "Microondas Oster Digital Negro 0.7 Pies 20 Litros 700W Modelo: OGGE3702. \n\nEl microonda Oster de 20 litros es una excelente opción para calentar y cocinar alimentos de manera rápida y eficiente. Con funciones preestablecidas y un diseño moderno, es fácil de usar y se adapta a cualquier cocina.\n\n-Capacidad 20 Litros.\n-Blanco Y Negro.\n-700 Watts Potencia.\n-0.7 Pies Cubicos.\n-Control Digital.\n-10 Ajustes De Potencia.\n-6 Programas De Cocion.\n-Función De Descongelado.\n-Display Con Relog Digital.\n-Puerta De Vidrio. \n\nCon su capacidad de 20 litros y potencia de 700W, puedes calentar y cocinar alimentos de manera rápida y eficiente, mientras que el interior y exterior de acero inoxidable y el plato giratorio de vidrio facilitan la limpieza y el mantenimiento."
             },
             {
                 id: "101005",
@@ -510,11 +514,15 @@ botonCerrarCarrito.addEventListener('click', function() {
 // Codigo Abrir y Cerrar el carrito - Inicio
 
 // Codigo Abrir y Cerrar Factura - Inicio
-function abrirFactura(){
-    document.getElementById(`factura`).style.display = 'flex'
-    let numeroFactura = Math.round(Math.random()*999999)
-    document.getElementById("numeroDeFactura").innerText = `${numeroFactura}`
-}
+
+    function abrirFactura(){
+        setTimeout(()=>{
+        document.getElementById(`factura`).style.display = 'flex'
+        let numeroFactura = Math.round(Math.random()*999999)
+        document.getElementById("numeroDeFactura").innerText = `${numeroFactura}`
+    }, 3000)
+
+    }
 
 function cerrarFactura(){
     document.getElementById(`factura`).style.display = 'none'
@@ -964,24 +972,6 @@ function principal (){
         imagenProductoDisplay[2].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')`;
         imagenProductoDisplay[3].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')`;
 
-        let i=0;
-        if(indiceCategoria === 0){
-            for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#DAB387CC";
-            }
-        }else if(indiceCategoria === 1){
-            for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#FFD700CC";
-            }
-        }else if(indiceCategoria === 2){
-            for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#32CD32CC";
-            }
-        }else if(indiceCategoria === 3){
-            for (i=0; i<imagenProductoDisplay.length; i++){
-                imagenProductoDisplay[i].style.backgroundColor = "#A29FD6CC";
-            }
-        }
         
         let titulosProductosDisplays = document.getElementsByClassName("tituloProducto");
         titulosProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].titulo}`;
@@ -1013,6 +1003,11 @@ function principal (){
         imagenDescripcionProductoDisplay[2].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay3].imagen}')`;
         imagenDescripcionProductoDisplay[3].style.backgroundImage = `url('${categorias[indiceCategoria].productos[indiceDisplay4].imagen}')`;
 
+        // let parrafoDescripcionProductosDisplays = document.getElementsByClassName("parrafoDescripcionProducto");
+        // parrafoDescripcionProductosDisplays[0].innerText = `${categorias[indiceCategoria].productos[indiceDisplay1].descripcion}`;
+        // parrafoDescripcionProductosDisplays[1].innerText = `${categorias[indiceCategoria].productos[indiceDisplay2].descripcion}`;
+        // parrafoDescripcionProductosDisplays[2].innerText = `${categorias[indiceCategoria].productos[indiceDisplay3].descripcion}`;
+        // parrafoDescripcionProductosDisplays[3].innerText = `${categorias[indiceCategoria].productos[indiceDisplay4].descripcion}`;
 }
 principal();
 // Codigo mostrar pantalla principal - Inicio

@@ -29,7 +29,7 @@
         font-size: 10px;
     }
 
-    html, #ventanaEmergenteCarrito, .descripcionProducto, .parrafoDescripcionProducto{
+    html, #ventanaEmergenteCarrito, #contenedorDeFactura, .descripcionProducto, .parrafoDescripcionProducto{
         scrollbar-width: none;
     }
 
@@ -198,20 +198,20 @@
             <span id="botonCambiarProductosDerecha" onclick="botonCambiarProductosDerecha()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] mr-[5px] min-[400px]:mr-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_forward</span>
         </section>
     </main>
-    <section id="factura" class="flex hidden flex-col justify-center absolute z-10 left-[5%] top-[175px] m-[10px] min-[400px]:left-[12%] min-[450px]:left-[20%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%]">
-        <div class="h-[370px] w-[300px] sm:w-[500px]  bg-[#f5f5f5] ">
+    <section id="factura" class="h-[370px]  flex flex-col justify-center absolute z-10 left-[5%] top-[175px] m-[10px] min-[400px]:left-[12%] min-[450px]:left-[20%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%]">
+        <div id="contenedorDeFactura" class="overflow-auto h-[370px] w-[300px] sm:w-[500px]  bg-[#f5f5f5] ">
             <div class=" flex items-center justify-end p-[10px]">
                 <button id="realizarPago" class="min-[300px]:mr-[30%] sm:mr-[35%] bg-[#00BFFF] text-slate-800 p-[5px] rounded"><span class="material-symbols-outlined ">credit_score</span><p>Realizar Pago</p></button>
                 <button id="botonCerrarFactura" onclick="cerrarFactura()" class=""><span id="spanCerrarFactura" class="material-symbols-outlined">cancel</span></button>
             </div>
             <div id="contenidoDeFactura" class="">
-                <div id="facturaCabecera" class="flex flex-col justify-center items-center border-b-[1.5px] border-black mx-[5px]">
+                <div id="facturaCabecera" class=" flex flex-col justify-center items-center border-b-[1.5px] border-black mx-[5px]">
                     <h1 class="text-center text-[1.8rem] font-bold">Factura Fiscal General</h1>
                     <h2 class="text-center text-[2rem]">JoyGiving Co.🙂</h2>
                     <h1 class="text-center text-[1.8rem] font-bold">RIF: J-33366688-8</h3>
                     <h3 class="text-center ">Av. Delicias con Av. 5 de julio, Edificio 345 piso 2 local 3F, Maracaibo, Edo. Zulia, Venezuela.</h3>
                 </div>
-                <div id="facturaDetalles" class="border-b-[1.5px] border-black py-[5px] mx-[5px]">
+                <div id="facturaDetalles" class=" border-b-[1.5px] border-black py-[5px] mx-[5px]">
                     <div class="flex gap-[10px] font-bold justify-evenly items-center">
                         <div id="relojFactura" class="text-[1.2rem]">HH:MM:SS</div>
                         <div id="fechaFactura" class="text-[1.2rem]">DD/MM/AAAA</div>
@@ -220,8 +220,8 @@
                         <h3 class="text-[1.2rem]">Factura Nº: <span id="numeroDeFactura" class="text-[1.3rem]"></span></h3>
                     </div>
                 </div>
-                <div id="facturaProductos" class="flex mx-[5px] items-center mt-[5px] border-b-[1px] border-black">
-                    <div id="facturaProductosDescripcion" class="w-[50%]">
+                <div id="facturaProductos" class=" flex mx-[5px] items-center mt-[5px] border-b-[1px] border-black">
+                    <div id="facturaProductosDescripcion" class="w-[50%] truncate">
                         <p class="">Descripción</p>
                         <div id="productosEnFactura" class=""></div>
                     </div>    

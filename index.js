@@ -778,7 +778,6 @@ function añadirAlCarritoDisplay3(){
             parrafoPrecioProductoEnCarrito.classList.add("h-[5%]");
             parrafoCantidadEnCarritoDeProducto.classList.add("h-[5%]");
             removerProducto.classList.add("select-none", "hover:cursor-pointer")
-90
 
             divProducto.appendChild(contenedorTitulo_y_RemoverProducto);
             divProducto.appendChild(imagenDeProducto);
@@ -876,7 +875,6 @@ function removerTodoDelCarrito (){
 }
 
 function removerElementoDelCarrito(boton) {
-    // let divARemover = this.parentNode;
     let divARemover = boton.parentNode; /* caracter - */
     let padre = divARemover.parentNode; /* contenedor titulo item y caracter - */
     let display = padre.parentNode; /* display del producto */
@@ -901,9 +899,9 @@ function removerElementoDelCarrito(boton) {
     carritoCrudo=[];
 };
 
-// Codigo añadir y remover elementos del carrito - inicio
+// Codigo añadir y remover elementos del carrito 
 
-// Codigo realizar compra - inicio
+// Codigo realizar compra 
 
 function actualizarFactura(){
     // Agregando los productos a la factura
@@ -951,10 +949,6 @@ function actualizarFactura(){
 
 // Codigo realizar compra - final
 
-
-
-// Codigo Ver Descripcion y Cerrar Descripcion - inicio
-// Codigo Ver Descripcion y Cerrar Descripcion - final
 
 
 // Codigo mostrar pantalla principal - Inicio
@@ -1011,10 +1005,6 @@ function principal (){
 }
 principal();
 // Codigo mostrar pantalla principal - Inicio
-
-
-
-
 
 
 

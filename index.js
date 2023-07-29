@@ -572,6 +572,30 @@ function cerrarDescripcionDisplay4(){
 // Codigo Abrir y Cerrar Descripcion - Final
 
 
+// Codigo FOOTER ACERCA DE, UBICACION y CONTACTO - inicio
+function abrirVentanaFooterAcercaDe(){
+    document.getElementById("contenedorDeFooterInformacion").style.display = 'flex';
+    document.getElementById("imagenUbicacionFooterInformacion").style.display = 'none'
+    document.getElementById("parrafoFooterInformacion").innerText = 'Mr. Monka Donk ~ Da Store es un servicio afiliado a la empresa ©JoyGiving, Co.🙂, el cuál nació con la intención de cubrir la necesidad de poder comprar cualquier artículo que puedas requerir ya sea para tu hogar, consumo diario, utilidades tecnológicas o incluso vestimenta, todo esto desde un sitio confiable, en una localización accesible desde muchas partes de la ciudad y además, disponible en línea! con el Servicio de Delivery más responsable y confiable de todos.';
+}
+
+function abrirVentanaFooterUbicacion(){
+    document.getElementById("contenedorDeFooterInformacion").style.display = 'flex';
+    document.getElementById("imagenUbicacionFooterInformacion").style.display = 'flex'
+    document.getElementById("parrafoFooterInformacion").innerText = 'Estamos ubicados en Venezuela, en la ciudad de Maracaibo en el Estado Zulia y nuestra dirección fiscal es Av. Delicias con Calle 77. 5 de julio, Edificio 345 piso 2 local 3F';
+}
+
+function abrirVentanaFooterContacto(){
+    document.getElementById("contenedorDeFooterInformacion").style.display = 'flex';
+    document.getElementById("imagenUbicacionFooterInformacion").style.display = 'none'
+    document.getElementById("parrafoFooterInformacion").innerText = `Correo JoyGivin, Co. 🙂: contactoJoygivingCo@joygivingbusiness.com. \n Correo Mr. Monka ~ Da Store: contactoMrMonkaStore@joygivingbusiness.com \n Teléfono Fijo: (+58) 0261 - 797-45-53. \n Teléfono Móvil: (+58) 0424 - 659-18-31. \n Teléfono Móvil: (+58) 0412 - 759-13-31. \n Teléfono Móvil: (+58) 0426 - 833-16-16`;
+}
+
+// Codigo FOOTER ACERCA DE, UBICACION y CONTACTO - Final
+
+
+
+
 // Codigo añadir y remover elementos del carrito - inicio
 let productosEnCarrito = [];
 

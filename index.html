@@ -29,7 +29,7 @@
         font-size: 10px;
     }
 
-    html, #ventanaEmergenteCarrito, #contenedorDeFactura, .descripcionProducto, .parrafoDescripcionProducto{
+    html, #ventanaEmergenteCarrito, #contenedorDeFactura, .descripcionProducto, .parrafoDescripcionProducto, #contenedorDeFooterInformacion{
         scrollbar-width: none;
     }
 
@@ -102,7 +102,7 @@
                 <span id="botonCambiarCategoriaDerecha" onclick="cambiarCategoriaDerecha()" class="material-symbols-outlined hover:cursor-pointer select-none h-[20%] flex justify-center items-center  bg-[black]/70 rounded text-white text-[4.5rem]">chevron_right</span>
             </div>
         </section>
-        <section id="contenedorGridProductos" class="flex my-[50px]">
+        <section id="contenedorGridProductos" class="flex py-[50px]">
             <span id="botonCambiarProductosIzquierda" onclick="botonCambiarProductosIzquierda()" class="material-symbols-outlined hover:cursor-pointer flex items-center justify-center h-[50px] w-[50px] rounded-xl drop-shadow-xl mt-[110px] ml-[5px] min-[400px]:ml-[25px]  select-none text-[orange] bg-[#AB1FAB]/90 hover:bg-[#880F88]/80">arrow_back</span>
             <div id="gridProductos" class="grid min-[300px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center h-[280px] w-full gap-[3%] px-[3%]">
                 <div id="displayProducto1" class="bg-[#AB1FAB]/80 flex flex-col  flex px-[5px] py-[2.5%] justify-between h-[95%] w-[100%] md:w-[200px] bg-[#343434] rounded-xl ">
@@ -208,7 +208,7 @@
                     <h1 class="text-center text-[1.8rem] font-bold">Factura Fiscal General</h1>
                     <h2 class="text-center text-[2rem]">JoyGiving Co.🙂</h2>
                     <h1 class="text-center text-[1.8rem] font-bold">RIF: J-33366688-8</h3>
-                    <h3 class="text-center ">Av. Delicias con Av. 5 de julio, Edificio 345 piso 2 local 3F, Maracaibo, Edo. Zulia, Venezuela.</h3>
+                    <h3 class="text-center ">Av. Delicias con Calle 77. 5 de julio, Edificio 345 piso 2 local 3F, Maracaibo, Edo. Zulia, Venezuela.</h3>
                 </div>
                 <div id="facturaDetalles" class=" border-b-[1.5px] border-black py-[5px] mx-[5px]">
                     <div class="flex gap-[10px] font-bold justify-evenly items-center">
@@ -257,15 +257,25 @@
     <footer class=" bg-[#185e97] pb-[5px]">
         <section id="footerInformacion" class="">
                 <div class="flex py-[80px] gap-[5%] items-center justify-center border-y-[2px] border-[#4288C3] mx-[1%] mt-[20px] mb-[30px]">
-                    <button data-aos="fade-up" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">info</span>Acerca de nosotros</p></button>
-                    <button data-aos="fade-up" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">location_on</span>Ubicación</p></button>
-                    <button data-aos="fade-up" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">call</span>Contacto</p></button>
+                    <button data-aos="fade-up" id="botonFooterAcercaDe" onclick="abrirVentanaFooterAcercaDe()" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">info</span>Acerca de nosotros</p></button>
+                    <button data-aos="fade-up" id="botonFooterUbicacion" onclick="abrirVentanaFooterUbicacion()" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">location_on</span>Ubicación</p></button>
+                    <button data-aos="fade-up" id="botonFooterContacto" onclick="abrirVentanaFooterContacto()" class="bg-[#AB1FAB] hover:bg-[#662d91] p-[8px] rounded-lg drop-shadow-xl text-center"><p class="flex items-center justify-center gap-[2px] text-center text-slate-900 font-bold text-[0rem] min-[400px]:text-[1.2rem] min-[500px]:text-[1.5rem]"><span class="material-symbols-outlined text-[orange] text-[3rem]">call</span>Contacto</p></button>
+                </div>
+                <div id="contenedorDeFooterInformacion" class="overflow-auto flex hidden flex-col relative  bg-[#4288C3]/60 top-[-230px] h-[190px] w-[90%] sm:w-[565px] left-[8%] min-[400px]:left-[4%] min-[450px]:left-[6%] sm:left-[10%] md:left-[20%] lg:left-[25%] xl:left-[30%] rounded-xl p-[5px]">
+                    <div class="flex justify-end w-full items-start">
+                        <button id="botonCerrarFooterInformacion" onclick='document.getElementById("contenedorDeFooterInformacion").style.display = `none`'  class=""><span id="spanCerrarFooterInformacion" class="material-symbols-outlined text-[orange]">cancel</span></button>
+                    </div>
+                    <div id="contenedorDeParrafoFooterInformacion" class="flex flex-col justify-center items-center h-full gap-[2px]">
+                        <p id="parrafoFooterInformacion" class="text-center text-white text-[1.3rem] bg-[#662d91]/90 rounded-lg"></p>
+                        <img id="imagenUbicacionFooterInformacion" class="h-[100px] w-[330px] rounded-lg drop-shadow-lg" src="./imagenes/ubicacion.jpg" alt="Ubicación">
+                    </div>
                 </div>
         </section>
         <section id="footerProductosYCopyright">
             <div class="">
                 <div class="grid justify-center items-start grid-cols-2 sm:grid-cols-4 pb-[20px] gap-[20px] border-b-[2px] border-[#4288C3] mx-[1%]">
-                    <button>
+                    <button onclick="indiceCategoria=0;indiceDisplay1 = 0;
+                    indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3; principal()">
                         <p class="flex flex-col text-[1.5rem] text-center">
                             Hogar
                             <span>Muebles</span>
@@ -274,7 +284,8 @@
                             <span>Articulos del Hogar</span>
                         </p>
                     </button>
-                    <button>
+                    <button onclick="indiceCategoria=1;indiceDisplay1 = 0;
+                    indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()">
                         <p class="flex flex-col text-[1.5rem] text-center">
                             Consumibles
                             <span class="">Alimentos</span>
@@ -282,7 +293,8 @@
                             <span class="">Dulces</span>
                         </p>
                     </button>
-                    <button>
+                    <button onclick="indiceCategoria=2;indiceDisplay1 = 0;
+                    indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()">
                         <p class="flex flex-col text-[1.5rem] text-center">
                             Tecnología
                             <span>Computadoras de mesa</span>
@@ -290,7 +302,8 @@
                             <span>Consolas de videojuegos</span>
                             <span>Teléfonos móviles</span></p>
                         </button>
-                    <button>
+                    <button onclick="indiceCategoria=3;indiceDisplay1 = 0;
+                    indiceDisplay2 = 1; indiceDisplay3=2; indiceDisplay4=3;principal()">
                         <p class="flex flex-col text-[1.5rem] text-center">
                             Departamento de Ropa
                             <span>Ropa para Damas</span>

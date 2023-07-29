@@ -680,12 +680,13 @@ function añadirAlCarritoDisplay1(){
             contenedorDeCarrito.appendChild(divProducto);
 
             
-            actualizarFactura()
+            
 
 
             ubicacionDeElementosEnCarrito++;
         }
     )
+    actualizarFactura()
     ubicacionDeElementosEnCarrito=0;
 }
 
@@ -749,9 +750,10 @@ function añadirAlCarritoDisplay2(){
 
             ubicacionDeElementosEnCarrito++;
             
-            actualizarFactura();
+            
         }
     )
+    actualizarFactura();
     ubicacionDeElementosEnCarrito=0;
 };
 
@@ -815,9 +817,10 @@ function añadirAlCarritoDisplay3(){
 
 
             ubicacionDeElementosEnCarrito++;
-            actualizarFactura();
+            
         }
     )
+    actualizarFactura();
     ubicacionDeElementosEnCarrito=0;
 };
 
@@ -841,7 +844,6 @@ function añadirAlCarritoDisplay4(){
             let divProducto = document.createElement("div");
             divProducto.setAttribute("id", `${ubicacionDeElementosEnCarrito}`);
             idDeLaUbicacion[ubicacionDeElementosEnCarrito] = indiceDeProducto.id;
-
 
             let parrafoNombreDeProducto = document.createElement("p");
             let imagenDeProducto = document.createElement("img");
@@ -880,12 +882,11 @@ function añadirAlCarritoDisplay4(){
             contenedorDeCarrito.appendChild(divProducto);
 
 
-
-
             ubicacionDeElementosEnCarrito++;
-            actualizarFactura();
+            
         }
     )
+    actualizarFactura();
     ubicacionDeElementosEnCarrito=0;
 };
 
@@ -895,6 +896,11 @@ function removerTodoDelCarrito (){
         miDiv.removeChild(miDiv.firstChild);
     }
     productosEnCarrito=[];
+    for (let i=0; i<categorias.length; i++){
+        for (let j=0; j<categorias[i].productos.length; j++){
+            categorias[i].productos[j].cantidadEnCarrito=0;
+        }
+    }
     contadorDeCarrito.innerText = (`${productosEnCarrito.length}`);
 }
 
@@ -913,8 +919,20 @@ function removerElementoDelCarrito(boton) {
     if (contenedorDeCarrito.childElementCount === 0){
         carritoCrudo=[];
         idDeLaUbicacion=[];
+        for (let i=0; i<categorias.length; i++){
+            for (let j=0; j<categorias[i].productos.length; j++){
+                categorias[i].productos[j].cantidadEnCarrito=0;
+            }
+        }
     }else{
         carritoCrudo = productosEnCarrito.filter(producto =>  producto.id !== idDeLaUbicacion[display.id])
+        for (let i=0; i<categorias.length; i++){
+            for (let j=0; j<categorias[i].productos.length; j++){
+                if (categorias[i].productos[j].id === idDeLaUbicacion[display.id]){
+                    categorias[i].productos[j].cantidadEnCarrito=0;
+                }
+            }
+        }
     }
 
     productosEnCarrito = carritoCrudo;
@@ -930,6 +948,7 @@ function removerElementoDelCarrito(boton) {
 function actualizarFactura(){
     // Agregando los productos a la factura
     let contador = 0;
+    let montoTotal = [];
     let total = 0;
     let IVA = 0;
     let IVA2D = 0;
@@ -937,31 +956,28 @@ function actualizarFactura(){
     contenedorDescripcion.innerHTML=``;
     contenedorCantidad.innerHTML=``;
     contenedorMontos.innerHTML=``;
-    // if (productosEnCarrito.isEmpty()){
-    //     montoTotal=0;
-    // }else{
+
         productosEnCarrito.map(
             (indiceDeProducto)=>{
                 let parrafoNombreDeProductoEnFactura = document.createElement("p");
                 let parrafoCantidadDeProductoEnFactura = document.createElement("p");
                 let parrafoMontoDeProductoEnFactura = document.createElement("p");
-        
+                
+                parrafoMontoDeProductoEnFactura.classList.add("parrafoMontoDeProductoEnFactura");
+
                 parrafoNombreDeProductoEnFactura.innerText = `${indiceDeProducto.titulo}`;
                 parrafoCantidadDeProductoEnFactura.innerText = `${indiceDeProducto.cantidadEnCarrito}`;
                 montoTotal[contador] = indiceDeProducto.cantidadEnCarrito * indiceDeProducto.precio;
                 parrafoMontoDeProductoEnFactura.innerText = `${montoTotal[contador]}$`;
-        
+                contador++;
                 contenedorDescripcion.appendChild(parrafoNombreDeProductoEnFactura);
                 contenedorCantidad.appendChild(parrafoCantidadDeProductoEnFactura);
                 contenedorMontos.appendChild(parrafoMontoDeProductoEnFactura);
-                contador++;
             }
         )
-    // }
-    contador = 0;    
-    // let parrafoTotalBase = document.getElementById("facturaTotalBase");
-    // let parrafoIVA = document.getElementById("facturaTotalIVA");
-    // let parrafoTotalFinal = document.getElementById("facturaTotalFinal");
+        console.log(montoTotal)
+        contador=0;
+
     total = montoTotal.reduce((anterior, actual) =>anterior + actual, 0);
     IVA = (total * 0.16);
     IVA2D = IVA.toFixed(2)
@@ -971,9 +987,54 @@ function actualizarFactura(){
     document.getElementById("facturaTotalFinal").innerText = `${totalFinal}`;
 }
 
+function realizarPago(){
+    let volverAEmpezar = prompt(`Desea volver a Empezar?\n
+    1: Si, quiero finalizar mi compra Actual y realizar una compra nueva
+    2: No, quiero volver a revisar mi compra actual
+    `)
+    switch(volverAEmpezar){
+        case "1":
+            for (let i = 0; i<categorias.length; i++){
+                console.log(categorias[i])
+                console.log(categorias[i].productos.length)
+                console.log(categorias[i].productos)
+                for (let j = 0; j<categorias[i].productos.length; j++){
+                    console.log(categorias[i].productos[j].id)
+                    for (let k = 0; k < productosEnCarrito.length; k++){
+                        if(categorias[i].productos[j].id === productosEnCarrito[k].id){
+                            categorias[i].productos[j].cantidadDisponible-=productosEnCarrito[k].cantidadEnCarrito
+                            console.log(categorias[i].productos[j].cantidadDisponible)
+                        }
+                    }
+                }
+                
+            }
+            removerTodoDelCarrito();
+            principal();
+            document.getElementById(`factura`).style.display = 'none'
+            actualizarFactura();
+            break;
+        case "2":
+            alert("caso regresar")
+            break;
+        default:
+            alert("La opción seleccionada es inválida")
+            realizarPago()
+    }
+}
+
+
 // Codigo realizar compra - final
 
 
+
+// actualizar carrito inicio
+
+function actualizarCarrito(){
+    
+}
+
+// actualizar carrito final
 
 // Codigo mostrar pantalla principal - Inicio
 function principal (){
